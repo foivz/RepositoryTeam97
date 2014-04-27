@@ -33,11 +33,6 @@
             this.početnaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.odjavaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izlazToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dokumentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.primkaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.izdatnicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.primkaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.primkaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.pomoćToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oNamaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.picLogoVeliki = new System.Windows.Forms.PictureBox();
@@ -72,7 +67,6 @@
             // 
             this.mnuGlavniIzbornik.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.početnaToolStripMenuItem,
-            this.dokumentiToolStripMenuItem,
             this.pomoćToolStripMenuItem});
             this.mnuGlavniIzbornik.Location = new System.Drawing.Point(0, 0);
             this.mnuGlavniIzbornik.Name = "mnuGlavniIzbornik";
@@ -92,8 +86,9 @@
             // odjavaToolStripMenuItem
             // 
             this.odjavaToolStripMenuItem.Name = "odjavaToolStripMenuItem";
-            this.odjavaToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.odjavaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.odjavaToolStripMenuItem.Text = "Odjava";
+            this.odjavaToolStripMenuItem.Click += new System.EventHandler(this.odjavaToolStripMenuItem_Click);
             // 
             // izlazToolStripMenuItem
             // 
@@ -101,41 +96,6 @@
             this.izlazToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.izlazToolStripMenuItem.Text = "Izlaz";
             this.izlazToolStripMenuItem.Click += new System.EventHandler(this.izlazToolStripMenuItem_Click);
-            // 
-            // dokumentiToolStripMenuItem
-            // 
-            this.dokumentiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.primkaToolStripMenuItem,
-            this.izdatnicaToolStripMenuItem,
-            this.primkaToolStripMenuItem1,
-            this.primkaToolStripMenuItem2});
-            this.dokumentiToolStripMenuItem.Name = "dokumentiToolStripMenuItem";
-            this.dokumentiToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.dokumentiToolStripMenuItem.Text = "Dokumenti";
-            // 
-            // primkaToolStripMenuItem
-            // 
-            this.primkaToolStripMenuItem.Name = "primkaToolStripMenuItem";
-            this.primkaToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
-            this.primkaToolStripMenuItem.Text = "Izdatnica";
-            // 
-            // izdatnicaToolStripMenuItem
-            // 
-            this.izdatnicaToolStripMenuItem.Name = "izdatnicaToolStripMenuItem";
-            this.izdatnicaToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
-            this.izdatnicaToolStripMenuItem.Text = "Narudžbenica";
-            // 
-            // primkaToolStripMenuItem1
-            // 
-            this.primkaToolStripMenuItem1.Name = "primkaToolStripMenuItem1";
-            this.primkaToolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
-            this.primkaToolStripMenuItem1.Text = "Otpremnica";
-            // 
-            // primkaToolStripMenuItem2
-            // 
-            this.primkaToolStripMenuItem2.Name = "primkaToolStripMenuItem2";
-            this.primkaToolStripMenuItem2.Size = new System.Drawing.Size(147, 22);
-            this.primkaToolStripMenuItem2.Text = "Primka";
             // 
             // pomoćToolStripMenuItem
             // 
@@ -351,12 +311,7 @@
         private System.Windows.Forms.MenuStrip mnuGlavniIzbornik;
         private System.Windows.Forms.ToolStripMenuItem početnaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem izlazToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dokumentiToolStripMenuItem;
         private System.Windows.Forms.PictureBox picLogoVeliki;
-        private System.Windows.Forms.ToolStripMenuItem primkaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem izdatnicaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem primkaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem primkaToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem odjavaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pomoćToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem oNamaToolStripMenuItem;

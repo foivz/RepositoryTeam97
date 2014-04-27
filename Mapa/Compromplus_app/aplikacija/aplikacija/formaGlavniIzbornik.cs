@@ -37,7 +37,7 @@ namespace aplikacija
 
         private void picIzlaz_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
             
         }
 
@@ -69,6 +69,10 @@ namespace aplikacija
         {
             formaPracenjeProizvoda pracenje = new formaPracenjeProizvoda();
             pracenje.Show();
+        }
+
+        private void odjavaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -26,5 +26,13 @@ namespace aplikacija
         {
             this.Close();
         }
+
+        private void btnPrijaviSe_Click(object sender, EventArgs e)
+        {
+            formaGlavniIzbornik izbornik = new formaGlavniIzbornik();
+            izbornik.Show();
+            this.Hide();
+           
+        }
     }
 }
