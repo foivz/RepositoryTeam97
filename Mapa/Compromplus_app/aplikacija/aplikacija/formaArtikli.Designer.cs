@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formaArtikli));
             this.picRight = new System.Windows.Forms.PictureBox();
             this.picLeft = new System.Windows.Forms.PictureBox();
@@ -57,6 +58,23 @@
             this.picSpremi = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.picExit = new System.Windows.Forms.PictureBox();
+            this.t20_DBDataSet = new aplikacija.T20_DBDataSet();
+            this.korisnikBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.korisnikTableAdapter = new aplikacija.T20_DBDataSetTableAdapters.KorisnikTableAdapter();
+            this.tableAdapterManager = new aplikacija.T20_DBDataSetTableAdapters.TableAdapterManager();
+            this.korisnikBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.korisnikBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.picRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picArtikliIkona)).BeginInit();
@@ -66,6 +84,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picUnos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSpremi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t20_DBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.korisnikBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.korisnikBindingNavigator)).BeginInit();
+            this.korisnikBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
             // picRight
@@ -221,7 +243,7 @@
             this.artikliToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(735, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(984, 24);
             this.menuStrip1.TabIndex = 79;
             this.menuStrip1.Text = "mnuArtikli";
             // 
@@ -317,12 +339,160 @@
             this.picExit.TabStop = false;
             this.picExit.Click += new System.EventHandler(this.picExit_Click);
             // 
+            // t20_DBDataSet
+            // 
+            this.t20_DBDataSet.DataSetName = "T20_DBDataSet";
+            this.t20_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // korisnikBindingSource
+            // 
+            this.korisnikBindingSource.DataMember = "Korisnik";
+            this.korisnikBindingSource.DataSource = this.t20_DBDataSet;
+            // 
+            // korisnikTableAdapter
+            // 
+            this.korisnikTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.ArtiklTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.evidencijaKontroleTableAdapter = null;
+            this.tableAdapterManager.KorisnikTableAdapter = this.korisnikTableAdapter;
+            this.tableAdapterManager.tipKorisnikaTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = aplikacija.T20_DBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // korisnikBindingNavigator
+            // 
+            this.korisnikBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.korisnikBindingNavigator.BindingSource = this.korisnikBindingSource;
+            this.korisnikBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.korisnikBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.korisnikBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.korisnikBindingNavigatorSaveItem});
+            this.korisnikBindingNavigator.Location = new System.Drawing.Point(0, 24);
+            this.korisnikBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.korisnikBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.korisnikBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.korisnikBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.korisnikBindingNavigator.Name = "korisnikBindingNavigator";
+            this.korisnikBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.korisnikBindingNavigator.Size = new System.Drawing.Size(984, 25);
+            this.korisnikBindingNavigator.TabIndex = 127;
+            this.korisnikBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // korisnikBindingNavigatorSaveItem
+            // 
+            this.korisnikBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.korisnikBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("korisnikBindingNavigatorSaveItem.Image")));
+            this.korisnikBindingNavigatorSaveItem.Name = "korisnikBindingNavigatorSaveItem";
+            this.korisnikBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.korisnikBindingNavigatorSaveItem.Text = "Save Data";
+            this.korisnikBindingNavigatorSaveItem.Click += new System.EventHandler(this.korisnikBindingNavigatorSaveItem_Click);
+            // 
             // formaArtikli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
-            this.ClientSize = new System.Drawing.Size(735, 487);
+            this.ClientSize = new System.Drawing.Size(984, 507);
+            this.Controls.Add(this.korisnikBindingNavigator);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.picExit);
             this.Controls.Add(this.lblObrisi);
@@ -349,6 +519,7 @@
             this.Controls.Add(this.lblIdArtikli);
             this.Name = "formaArtikli";
             this.Text = "Artikli";
+            this.Load += new System.EventHandler(this.formaArtikli_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picArtikliIkona)).EndInit();
@@ -359,6 +530,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picUnos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSpremi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t20_DBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.korisnikBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.korisnikBindingNavigator)).EndInit();
+            this.korisnikBindingNavigator.ResumeLayout(false);
+            this.korisnikBindingNavigator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,6 +570,23 @@
         private System.Windows.Forms.PictureBox picSpremi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox picExit;
+        private T20_DBDataSet t20_DBDataSet;
+        private System.Windows.Forms.BindingSource korisnikBindingSource;
+        private T20_DBDataSetTableAdapters.KorisnikTableAdapter korisnikTableAdapter;
+        private T20_DBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingNavigator korisnikBindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton korisnikBindingNavigatorSaveItem;
 
     }
 }
