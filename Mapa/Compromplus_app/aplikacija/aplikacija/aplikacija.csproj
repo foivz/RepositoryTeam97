@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD54060A-C5F9-419A-BD10-731C8E7BADB0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>aplikacija</RootNamespace>
+    <AssemblyName>aplikacija</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="formaArtikli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaArtikli.Designer.cs">
+      <DependentUpon>formaArtikli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaDjelatnici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaDjelatnici.Designer.cs">
+      <DependentUpon>formaDjelatnici.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaDokumenti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaDokumenti.Designer.cs">
+      <DependentUpon>formaDokumenti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaGlavniIzbornik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaGlavniIzbornik.Designer.cs">
+      <DependentUpon>formaGlavniIzbornik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaIzdatnica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaIzdatnica.Designer.cs">
+      <DependentUpon>formaIzdatnica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaNarudzbenica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaNarudzbenica.Designer.cs">
+      <DependentUpon>formaNarudzbenica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaOtpremnica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaOtpremnica.Designer.cs">
+      <DependentUpon>formaOtpremnica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaPracenjeProizvoda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaPracenjeProizvoda.Designer.cs">
+      <DependentUpon>formaPracenjeProizvoda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaPrijava.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaPrijava.Designer.cs">
+      <DependentUpon>formaPrijava.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaPrimka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaPrimka.Designer.cs">
+      <DependentUpon>formaPrimka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaRepromaterijal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaRepromaterijal.Designer.cs">
+      <DependentUpon>formaRepromaterijal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaStatistika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaStatistika.Designer.cs">
+      <DependentUpon>formaStatistika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="T20_DBDataSet.cs">
+      <DependentUpon>T20_DBDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="T20_DBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T20_DBDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="formaArtikli.resx">
+      <DependentUpon>formaArtikli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaDjelatnici.resx">
+      <DependentUpon>formaDjelatnici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaDokumenti.resx">
+      <DependentUpon>formaDokumenti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaGlavniIzbornik.resx">
+      <DependentUpon>formaGlavniIzbornik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaIzdatnica.resx">
+      <DependentUpon>formaIzdatnica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaNarudzbenica.resx">
+      <DependentUpon>formaNarudzbenica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaOtpremnica.resx">
+      <DependentUpon>formaOtpremnica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaPracenjeProizvoda.resx">
+      <DependentUpon>formaPracenjeProizvoda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaPrijava.resx">
+      <DependentUpon>formaPrijava.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaPrimka.resx">
+      <DependentUpon>formaPrimka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaRepromaterijal.resx">
+      <DependentUpon>formaRepromaterijal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaStatistika.resx">
+      <DependentUpon>formaStatistika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="T20_DBDataSet.xsc">
+      <DependentUpon>T20_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="T20_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>T20_DBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="T20_DBDataSet.xss">
+      <DependentUpon>T20_DBDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
