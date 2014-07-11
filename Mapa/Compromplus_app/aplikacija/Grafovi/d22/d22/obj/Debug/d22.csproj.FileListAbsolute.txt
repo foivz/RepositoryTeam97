@@ -1,0 +1,11 @@
+c:\users\dajana\documents\visual studio 2012\Projects\d22\d22\bin\Debug\d22.exe.config
+c:\users\dajana\documents\visual studio 2012\Projects\d22\d22\bin\Debug\d22.exe
+c:\users\dajana\documents\visual studio 2012\Projects\d22\d22\bin\Debug\d22.pdb
+c:\users\dajana\documents\visual studio 2012\Projects\d22\d22\obj\Debug\d22.csprojResolveAssemblyReference.cache
+c:\users\dajana\documents\visual studio 2012\Projects\d22\d22\obj\Debug\d22.Form1.resources
+c:\users\dajana\documents\visual studio 2012\Projects\d22\d22\obj\Debug\d22.Properties.Resources.resources
+c:\users\dajana\documents\visual studio 2012\Projects\d22\d22\obj\Debug\d22.csproj.GenerateResource.Cache
+c:\users\dajana\documents\visual studio 2012\Projects\d22\d22\obj\Debug\d22.exe
+c:\users\dajana\documents\visual studio 2012\Projects\d22\d22\obj\Debug\d22.pdb
+c:\users\dajana\documents\visual studio 2012\Projects\d22\d22\obj\Debug\d22.Form2.resources
+c:\users\dajana\documents\visual studio 2012\Projects\d22\d22\obj\Debug\d22.Form3.resources
