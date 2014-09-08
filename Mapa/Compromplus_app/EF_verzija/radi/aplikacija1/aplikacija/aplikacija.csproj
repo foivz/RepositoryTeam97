@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD54060A-C5F9-419A-BD10-731C8E7BADB0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>aplikacija</RootNamespace>
+    <AssemblyName>aplikacija</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Artikli.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Djelatnik.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dokument.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EvidencijaKontrole.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="formaArtikli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaArtikli.Designer.cs">
+      <DependentUpon>formaArtikli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaArtikliPregled.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaArtikliPregled.Designer.cs">
+      <DependentUpon>formaArtikliPregled.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaArtikliUnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaArtikliUnos.Designer.cs">
+      <DependentUpon>formaArtikliUnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaDjelatnici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaDjelatnici.Designer.cs">
+      <DependentUpon>formaDjelatnici.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaDjelatniciPregled.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaDjelatniciPregled.Designer.cs">
+      <DependentUpon>formaDjelatniciPregled.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaDjelatniciUnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaDjelatniciUnos.Designer.cs">
+      <DependentUpon>formaDjelatniciUnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaDokumenti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaDokumenti.Designer.cs">
+      <DependentUpon>formaDokumenti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaGlavniIzbornik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaGlavniIzbornik.Designer.cs">
+      <DependentUpon>formaGlavniIzbornik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaPracenjeProizvoda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaPracenjeProizvoda.Designer.cs">
+      <DependentUpon>formaPracenjeProizvoda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaPrijava.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaPrijava.Designer.cs">
+      <DependentUpon>formaPrijava.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaRepromaterijal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaRepromaterijal.Designer.cs">
+      <DependentUpon>formaRepromaterijal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaStatistika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaStatistika.Designer.cs">
+      <DependentUpon>formaStatistika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaUredjivanjeArtikala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaUredjivanjeArtikala.Designer.cs">
+      <DependentUpon>formaUredjivanjeArtikala.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formaPregledArtikala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaPregledArtikala.Designer.cs">
+      <DependentUpon>formaPregledArtikala.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Korisnik.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PoslovniPartner.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repromaterijal.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="stavke_dokumenta.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Stroj.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T28EnigmaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>T28EnigmaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TipDokumenta.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipKorisnika.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="formaArtikli.resx">
+      <DependentUpon>formaArtikli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaArtikliPregled.resx">
+      <DependentUpon>formaArtikliPregled.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaArtikliUnos.resx">
+      <DependentUpon>formaArtikliUnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaDjelatnici.resx">
+      <DependentUpon>formaDjelatnici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaDjelatniciPregled.resx">
+      <DependentUpon>formaDjelatniciPregled.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaDokumenti.resx">
+      <DependentUpon>formaDokumenti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaGlavniIzbornik.resx">
+      <DependentUpon>formaGlavniIzbornik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaPracenjeProizvoda.resx">
+      <DependentUpon>formaPracenjeProizvoda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaPrijava.resx">
+      <DependentUpon>formaPrijava.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaRepromaterijal.resx">
+      <DependentUpon>formaRepromaterijal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaStatistika.resx">
+      <DependentUpon>formaStatistika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaPregledArtikala.resx">
+      <DependentUpon>formaPregledArtikala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formaUredjivanjeArtikala.resx">
+      <DependentUpon>formaUredjivanjeArtikala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Artikli.datasource" />
+    <None Include="Properties\DataSources\Djelatnik.datasource" />
+    <None Include="Properties\DataSources\Dokument.datasource" />
+    <None Include="Properties\DataSources\stavke_dokumenta.datasource" />
+    <None Include="Properties\DataSources\T28EnigmaEntities.datasource" />
+    <None Include="Properties\DataSources\T28EnigmaEntities1.datasource" />
+    <None Include="Properties\DataSources\T28EnigmaEntities28.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="T28EnigmaDataSet.xsc">
+      <DependentUpon>T28EnigmaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="T28EnigmaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>T28EnigmaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="T28EnigmaDataSet.xss">
+      <DependentUpon>T28EnigmaDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="T28Enigma.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="T28Enigma_log.ldf">
+      <DependentUpon>T28Enigma.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
