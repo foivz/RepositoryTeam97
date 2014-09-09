@@ -16,7 +16,7 @@ namespace aplikacija
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formaDokumenti());
+            Application.Run(new formaArtikliPregled());
         }
     }
 }

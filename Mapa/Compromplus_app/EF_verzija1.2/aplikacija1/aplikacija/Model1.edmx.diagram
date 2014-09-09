@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="95e05d4ac440432cacaa3972c2c5f6ec" Name="Diagram1">
+        <EntityTypeShape EntityType="T28EnigmaModel.Artikli" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="T28EnigmaModel.Djelatnik" Width="1.5" PointX="7.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="T28EnigmaModel.Dokument" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="T28EnigmaModel.EvidencijaKontrole" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="T28EnigmaModel.Korisnik" Width="1.5" PointX="8" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="T28EnigmaModel.PoslovniPartner" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="T28EnigmaModel.Repromaterijal" Width="1.5" PointX="5.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="T28EnigmaModel.stavke_dokumenta" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="T28EnigmaModel.Stroj" Width="1.5" PointX="10" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="T28EnigmaModel.TipDokumenta" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="T28EnigmaModel.TipKorisnika" Width="1.5" PointX="5.75" PointY="7.375" IsExpanded="true" />
+        <AssociationConnector Association="T28EnigmaModel.FK_Artikli_EvidencijaKontrole" ManuallyRouted="false" />
+        <AssociationConnector Association="T28EnigmaModel.FK_stavke_dokumenta_Artikli" ManuallyRouted="false" />
+        <AssociationConnector Association="T28EnigmaModel.FK_Stroj_Djelatnik" ManuallyRouted="false" />
+        <AssociationConnector Association="T28EnigmaModel.FK_Dokument_TipDokumenta" ManuallyRouted="false" />
+        <AssociationConnector Association="T28EnigmaModel.FK_PoslovniPartner_Dokument" ManuallyRouted="false" />
+        <AssociationConnector Association="T28EnigmaModel.FK_stavke_dokumenta_Dokument" ManuallyRouted="false" />
+        <AssociationConnector Association="T28EnigmaModel.FK_Korisnik_TipKorisnika" ManuallyRouted="false" />
+        <AssociationConnector Association="T28EnigmaModel.stavke_repromaterijala" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
