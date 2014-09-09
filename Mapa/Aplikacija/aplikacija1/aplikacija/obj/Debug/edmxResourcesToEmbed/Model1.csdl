@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="T28EnigmaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="T28EnigmaEntities28" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Artikli" EntityType="T28EnigmaModel.Artikli" />
+    <EntitySet Name="Djelatnik" EntityType="T28EnigmaModel.Djelatnik" />
+    <EntitySet Name="Dokument" EntityType="T28EnigmaModel.Dokument" />
+    <EntitySet Name="EvidencijaKontrole" EntityType="T28EnigmaModel.EvidencijaKontrole" />
+    <EntitySet Name="Korisnik" EntityType="T28EnigmaModel.Korisnik" />
+    <EntitySet Name="PoslovniPartner" EntityType="T28EnigmaModel.PoslovniPartner" />
+    <EntitySet Name="Repromaterijal" EntityType="T28EnigmaModel.Repromaterijal" />
+    <EntitySet Name="stavke_dokumenta" EntityType="T28EnigmaModel.stavke_dokumenta" />
+    <EntitySet Name="Stroj" EntityType="T28EnigmaModel.Stroj" />
+    <EntitySet Name="TipDokumenta" EntityType="T28EnigmaModel.TipDokumenta" />
+    <EntitySet Name="TipKorisnika" EntityType="T28EnigmaModel.TipKorisnika" />
+    <AssociationSet Name="FK_Artikli_EvidencijaKontrole" Association="T28EnigmaModel.FK_Artikli_EvidencijaKontrole">
+      <End Role="EvidencijaKontrole" EntitySet="EvidencijaKontrole" />
+      <End Role="Artikli" EntitySet="Artikli" />
+    </AssociationSet>
+    <AssociationSet Name="FK_stavke_dokumenta_Artikli" Association="T28EnigmaModel.FK_stavke_dokumenta_Artikli">
+      <End Role="Artikli" EntitySet="Artikli" />
+      <End Role="stavke_dokumenta" EntitySet="stavke_dokumenta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stroj_Djelatnik" Association="T28EnigmaModel.FK_Stroj_Djelatnik">
+      <End Role="Djelatnik" EntitySet="Djelatnik" />
+      <End Role="Stroj" EntitySet="Stroj" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dokument_TipDokumenta" Association="T28EnigmaModel.FK_Dokument_TipDokumenta">
+      <End Role="TipDokumenta" EntitySet="TipDokumenta" />
+      <End Role="Dokument" EntitySet="Dokument" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PoslovniPartner_Dokument" Association="T28EnigmaModel.FK_PoslovniPartner_Dokument">
+      <End Role="Dokument" EntitySet="Dokument" />
+      <End Role="PoslovniPartner" EntitySet="PoslovniPartner" />
+    </AssociationSet>
+    <AssociationSet Name="FK_stavke_dokumenta_Dokument" Association="T28EnigmaModel.FK_stavke_dokumenta_Dokument">
+      <End Role="Dokument" EntitySet="Dokument" />
+      <End Role="stavke_dokumenta" EntitySet="stavke_dokumenta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Korisnik_TipKorisnika" Association="T28EnigmaModel.FK_Korisnik_TipKorisnika">
+      <End Role="TipKorisnika" EntitySet="TipKorisnika" />
+      <End Role="Korisnik" EntitySet="Korisnik" />
+    </AssociationSet>
+    <AssociationSet Name="stavke_repromaterijala" Association="T28EnigmaModel.stavke_repromaterijala">
+      <End Role="Artikli" EntitySet="Artikli" />
+      <End Role="Repromaterijal" EntitySet="Repromaterijal" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Artikli">
+    <Key>
+      <PropertyRef Name="IdArtikli" />
+    </Key>
+    <Property Name="IdArtikli" Type="Int32" Nullable="false" />
+    <Property Name="naziv" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="opis" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="boja" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="evidencijaKontrole" Type="Int32" />
+    <NavigationProperty Name="EvidencijaKontrole1" Relationship="T28EnigmaModel.FK_Artikli_EvidencijaKontrole" FromRole="Artikli" ToRole="EvidencijaKontrole" />
+    <NavigationProperty Name="stavke_dokumenta" Relationship="T28EnigmaModel.FK_stavke_dokumenta_Artikli" FromRole="Artikli" ToRole="stavke_dokumenta" />
+    <NavigationProperty Name="Repromaterijal" Relationship="T28EnigmaModel.stavke_repromaterijala" FromRole="Artikli" ToRole="Repromaterijal" />
+  </EntityType>
+  <EntityType Name="Djelatnik">
+    <Key>
+      <PropertyRef Name="IdDjelatnik" />
+    </Key>
+    <Property Name="IdDjelatnik" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="prezime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="adresa" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="strucnaSprema" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Stroj" Relationship="T28EnigmaModel.FK_Stroj_Djelatnik" FromRole="Djelatnik" ToRole="Stroj" />
+  </EntityType>
+  <EntityType Name="Dokument">
+    <Key>
+      <PropertyRef Name="IdDokument" />
+    </Key>
+    <Property Name="IdDokument" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nazivArtikla" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="datum" Type="DateTime" Precision="0" />
+    <Property Name="opis" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="tipDokumenta" Type="Int32" />
+    <NavigationProperty Name="TipDokumenta1" Relationship="T28EnigmaModel.FK_Dokument_TipDokumenta" FromRole="Dokument" ToRole="TipDokumenta" />
+    <NavigationProperty Name="PoslovniPartner" Relationship="T28EnigmaModel.FK_PoslovniPartner_Dokument" FromRole="Dokument" ToRole="PoslovniPartner" />
+    <NavigationProperty Name="stavke_dokumenta" Relationship="T28EnigmaModel.FK_stavke_dokumenta_Dokument" FromRole="Dokument" ToRole="stavke_dokumenta" />
+  </EntityType>
+  <EntityType Name="EvidencijaKontrole">
+    <Key>
+      <PropertyRef Name="IdEvidencijaKontrole" />
+    </Key>
+    <Property Name="IdEvidencijaKontrole" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="klasa" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="opis" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Artikli" Relationship="T28EnigmaModel.FK_Artikli_EvidencijaKontrole" FromRole="EvidencijaKontrole" ToRole="Artikli" />
+  </EntityType>
+  <EntityType Name="Korisnik">
+    <Key>
+      <PropertyRef Name="IdKorisnik" />
+    </Key>
+    <Property Name="IdKorisnik" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="korisnickoIme" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="lozinka" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="tipKorisnika" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TipKorisnika1" Relationship="T28EnigmaModel.FK_Korisnik_TipKorisnika" FromRole="Korisnik" ToRole="TipKorisnika" />
+  </EntityType>
+  <EntityType Name="PoslovniPartner">
+    <Key>
+      <PropertyRef Name="IdPoslovniPartner" />
+    </Key>
+    <Property Name="IdPoslovniPartner" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="prezime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="adresa" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="dokument" Type="Int32" />
+    <NavigationProperty Name="Dokument1" Relationship="T28EnigmaModel.FK_PoslovniPartner_Dokument" FromRole="PoslovniPartner" ToRole="Dokument" />
+  </EntityType>
+  <EntityType Name="Repromaterijal">
+    <Key>
+      <PropertyRef Name="IdRepromaterijal" />
+    </Key>
+    <Property Name="IdRepromaterijal" Type="Int32" Nullable="false" />
+    <Property Name="vrsta_materijala" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="boja" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="opis" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Artikli" Relationship="T28EnigmaModel.stavke_repromaterijala" FromRole="Repromaterijal" ToRole="Artikli" />
+  </EntityType>
+  <EntityType Name="stavke_dokumenta">
+    <Key>
+      <PropertyRef Name="artikliId" />
+      <PropertyRef Name="dokumentId" />
+    </Key>
+    <Property Name="artikliId" Type="Int32" Nullable="false" />
+    <Property Name="dokumentId" Type="Int32" Nullable="false" />
+    <Property Name="kolicina" Type="Int32" />
+    <NavigationProperty Name="Artikli" Relationship="T28EnigmaModel.FK_stavke_dokumenta_Artikli" FromRole="stavke_dokumenta" ToRole="Artikli" />
+    <NavigationProperty Name="Dokument" Relationship="T28EnigmaModel.FK_stavke_dokumenta_Dokument" FromRole="stavke_dokumenta" ToRole="Dokument" />
+  </EntityType>
+  <EntityType Name="Stroj">
+    <Key>
+      <PropertyRef Name="IdStroj" />
+    </Key>
+    <Property Name="IdStroj" Type="Int32" Nullable="false" />
+    <Property Name="naziv" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="djelatnik" Type="Int32" />
+    <NavigationProperty Name="Djelatnik1" Relationship="T28EnigmaModel.FK_Stroj_Djelatnik" FromRole="Stroj" ToRole="Djelatnik" />
+  </EntityType>
+  <EntityType Name="TipDokumenta">
+    <Key>
+      <PropertyRef Name="IdTipDokumenta" />
+    </Key>
+    <Property Name="IdTipDokumenta" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Dokument" Relationship="T28EnigmaModel.FK_Dokument_TipDokumenta" FromRole="TipDokumenta" ToRole="Dokument" />
+  </EntityType>
+  <EntityType Name="TipKorisnika">
+    <Key>
+      <PropertyRef Name="IdTipKorisnika" />
+    </Key>
+    <Property Name="IdTipKorisnika" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="uloga" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Korisnik" Relationship="T28EnigmaModel.FK_Korisnik_TipKorisnika" FromRole="TipKorisnika" ToRole="Korisnik" />
+  </EntityType>
+  <Association Name="FK_Artikli_EvidencijaKontrole">
+    <End Role="EvidencijaKontrole" Type="T28EnigmaModel.EvidencijaKontrole" Multiplicity="0..1" />
+    <End Role="Artikli" Type="T28EnigmaModel.Artikli" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EvidencijaKontrole">
+        <PropertyRef Name="IdEvidencijaKontrole" />
+      </Principal>
+      <Dependent Role="Artikli">
+        <PropertyRef Name="evidencijaKontrole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_stavke_dokumenta_Artikli">
+    <End Role="Artikli" Type="T28EnigmaModel.Artikli" Multiplicity="1" />
+    <End Role="stavke_dokumenta" Type="T28EnigmaModel.stavke_dokumenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artikli">
+        <PropertyRef Name="IdArtikli" />
+      </Principal>
+      <Dependent Role="stavke_dokumenta">
+        <PropertyRef Name="artikliId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stroj_Djelatnik">
+    <End Role="Djelatnik" Type="T28EnigmaModel.Djelatnik" Multiplicity="0..1" />
+    <End Role="Stroj" Type="T28EnigmaModel.Stroj" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Djelatnik">
+        <PropertyRef Name="IdDjelatnik" />
+      </Principal>
+      <Dependent Role="Stroj">
+        <PropertyRef Name="djelatnik" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dokument_TipDokumenta">
+    <End Role="TipDokumenta" Type="T28EnigmaModel.TipDokumenta" Multiplicity="0..1" />
+    <End Role="Dokument" Type="T28EnigmaModel.Dokument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipDokumenta">
+        <PropertyRef Name="IdTipDokumenta" />
+      </Principal>
+      <Dependent Role="Dokument">
+        <PropertyRef Name="tipDokumenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PoslovniPartner_Dokument">
+    <End Role="Dokument" Type="T28EnigmaModel.Dokument" Multiplicity="0..1" />
+    <End Role="PoslovniPartner" Type="T28EnigmaModel.PoslovniPartner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dokument">
+        <PropertyRef Name="IdDokument" />
+      </Principal>
+      <Dependent Role="PoslovniPartner">
+        <PropertyRef Name="dokument" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_stavke_dokumenta_Dokument">
+    <End Role="Dokument" Type="T28EnigmaModel.Dokument" Multiplicity="1" />
+    <End Role="stavke_dokumenta" Type="T28EnigmaModel.stavke_dokumenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dokument">
+        <PropertyRef Name="IdDokument" />
+      </Principal>
+      <Dependent Role="stavke_dokumenta">
+        <PropertyRef Name="dokumentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Korisnik_TipKorisnika">
+    <End Role="TipKorisnika" Type="T28EnigmaModel.TipKorisnika" Multiplicity="1" />
+    <End Role="Korisnik" Type="T28EnigmaModel.Korisnik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipKorisnika">
+        <PropertyRef Name="IdTipKorisnika" />
+      </Principal>
+      <Dependent Role="Korisnik">
+        <PropertyRef Name="tipKorisnika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="stavke_repromaterijala">
+    <End Role="Artikli" Type="T28EnigmaModel.Artikli" Multiplicity="*" />
+    <End Role="Repromaterijal" Type="T28EnigmaModel.Repromaterijal" Multiplicity="*" />
+  </Association>
+</Schema>
