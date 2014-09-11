@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="T28EnigmaModelStoreContainer" CdmEntityContainer="T28EnigmaEntities28">
+    <EntitySetMapping Name="Artikli">
+      <EntityTypeMapping TypeName="T28EnigmaModel.Artikli">
+        <MappingFragment StoreEntitySet="Artikli">
+          <ScalarProperty Name="IdArtikli" ColumnName="IdArtikli" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="opis" ColumnName="opis" />
+          <ScalarProperty Name="boja" ColumnName="boja" />
+          <ScalarProperty Name="evidencijaKontrole" ColumnName="evidencijaKontrole" />
+          <ScalarProperty Name="kolicinaNaSkladistu" ColumnName="kolicinaNaSkladistu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Djelatnik">
+      <EntityTypeMapping TypeName="T28EnigmaModel.Djelatnik">
+        <MappingFragment StoreEntitySet="Djelatnik">
+          <ScalarProperty Name="IdDjelatnik" ColumnName="IdDjelatnik" />
+          <ScalarProperty Name="ime" ColumnName="ime" />
+          <ScalarProperty Name="prezime" ColumnName="prezime" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+          <ScalarProperty Name="strucnaSprema" ColumnName="strucnaSprema" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dokument">
+      <EntityTypeMapping TypeName="T28EnigmaModel.Dokument">
+        <MappingFragment StoreEntitySet="Dokument">
+          <ScalarProperty Name="IdDokument" ColumnName="IdDokument" />
+          <ScalarProperty Name="nazivArtikla" ColumnName="nazivArtikla" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="opis" ColumnName="opis" />
+          <ScalarProperty Name="tipDokumenta" ColumnName="tipDokumenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Korisnik">
+      <EntityTypeMapping TypeName="T28EnigmaModel.Korisnik">
+        <MappingFragment StoreEntitySet="Korisnik">
+          <ScalarProperty Name="IdKorisnik" ColumnName="IdKorisnik" />
+          <ScalarProperty Name="korisnickoIme" ColumnName="korisnickoIme" />
+          <ScalarProperty Name="lozinka" ColumnName="lozinka" />
+          <ScalarProperty Name="tipKorisnika" ColumnName="tipKorisnika" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Repromaterijal">
+      <EntityTypeMapping TypeName="T28EnigmaModel.Repromaterijal">
+        <MappingFragment StoreEntitySet="Repromaterijal">
+          <ScalarProperty Name="IdRepromaterijal" ColumnName="IdRepromaterijal" />
+          <ScalarProperty Name="vrsta_materijala" ColumnName="vrsta_materijala" />
+          <ScalarProperty Name="boja" ColumnName="boja" />
+          <ScalarProperty Name="opis" ColumnName="opis" />
+          <ScalarProperty Name="kolicinaNaSkladistu" ColumnName="kolicinaNaSkladistu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stavke_dokumenta">
+      <EntityTypeMapping TypeName="T28EnigmaModel.stavke_dokumenta">
+        <MappingFragment StoreEntitySet="stavke_dokumenta">
+          <ScalarProperty Name="artikliId" ColumnName="artikliId" />
+          <ScalarProperty Name="dokumentId" ColumnName="dokumentId" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stavke_repromaterijala">
+      <EntityTypeMapping TypeName="T28EnigmaModel.stavke_repromaterijala">
+        <MappingFragment StoreEntitySet="stavke_repromaterijala">
+          <ScalarProperty Name="artikl" ColumnName="artikl" />
+          <ScalarProperty Name="repromaterijal" ColumnName="repromaterijal" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stroj">
+      <EntityTypeMapping TypeName="T28EnigmaModel.Stroj">
+        <MappingFragment StoreEntitySet="Stroj">
+          <ScalarProperty Name="IdStroj" ColumnName="IdStroj" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="djelatnik" ColumnName="djelatnik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipDokumenta">
+      <EntityTypeMapping TypeName="T28EnigmaModel.TipDokumenta">
+        <MappingFragment StoreEntitySet="TipDokumenta">
+          <ScalarProperty Name="IdTipDokumenta" ColumnName="IdTipDokumenta" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipKorisnika">
+      <EntityTypeMapping TypeName="T28EnigmaModel.TipKorisnika">
+        <MappingFragment StoreEntitySet="TipKorisnika">
+          <ScalarProperty Name="IdTipKorisnika" ColumnName="IdTipKorisnika" />
+          <ScalarProperty Name="uloga" ColumnName="uloga" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -89,3 +89,6 @@ C:\Users\Ivan\Desktop\9mj\radi\aplikacija1\aplikacija\obj\Debug\aplikacija.forma
 C:\Users\Ivan\Desktop\9mj\radi\aplikacija1\aplikacija\obj\Debug\aplikacija.formaRepromaterijalUnos.resources
 C:\Users\Ivan\Desktop\9mj\radi\aplikacija1\aplikacija\obj\Debug\aplikacija.formaStatistikaKlase.resources
 C:\Users\Ivan\Desktop\9mj\radi\aplikacija1\aplikacija\obj\Debug\aplikacija.formaStatistikaDokumenti.resources
+C:\Users\Ivan\Documents\GitHub\RepositoryTeam97\Mapa\Aplikacija\aplikacija1\aplikacija\bin\Debug\aplikacija.exe.config
+C:\Users\Ivan\Documents\GitHub\RepositoryTeam97\Mapa\Aplikacija\aplikacija1\aplikacija\obj\Debug\aplikacija.exe
+C:\Users\Ivan\Documents\GitHub\RepositoryTeam97\Mapa\Aplikacija\aplikacija1\aplikacija\obj\Debug\aplikacija.pdb
