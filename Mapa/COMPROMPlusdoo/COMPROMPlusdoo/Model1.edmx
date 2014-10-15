@@ -1,0 +1,1328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="T23_Enigma2Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="T23_Enigma2ModelStoreContainer">
+          <EntitySet Name="Artikli" EntityType="T23_Enigma2Model.Store.Artikli" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Djelatnik" EntityType="T23_Enigma2Model.Store.Djelatnik" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Izdatnica" EntityType="T23_Enigma2Model.Store.Izdatnica" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="knjizenjeDokumenta" EntityType="T23_Enigma2Model.Store.knjizenjeDokumenta" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Korisnik" EntityType="T23_Enigma2Model.Store.Korisnik" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Narudzbenica" EntityType="T23_Enigma2Model.Store.Narudzbenica" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Otpremnica" EntityType="T23_Enigma2Model.Store.Otpremnica" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="poslovniPartner" EntityType="T23_Enigma2Model.Store.poslovniPartner" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="pracenjeProizvodnje" EntityType="T23_Enigma2Model.Store.pracenjeProizvodnje" store:Type="Tables" store:Schema="dbo" store:Name="pracenjeProizvodnje">
+            <DefiningQuery>SELECT 
+      [pracenjeProizvodnje].[idDjelatnika] AS [idDjelatnika], 
+      [pracenjeProizvodnje].[idStroja] AS [idStroja], 
+      [pracenjeProizvodnje].[kolicina] AS [kolicina]
+      FROM [dbo].[pracenjeProizvodnje] AS [pracenjeProizvodnje]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Primka" EntityType="T23_Enigma2Model.Store.Primka" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Repromaterijali" EntityType="T23_Enigma2Model.Store.Repromaterijali" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="stavkeIzdatnice" EntityType="T23_Enigma2Model.Store.stavkeIzdatnice" store:Type="Tables" store:Schema="dbo" store:Name="stavkeIzdatnice">
+            <DefiningQuery>SELECT 
+      [stavkeIzdatnice].[idArtikla] AS [idArtikla], 
+      [stavkeIzdatnice].[idIzdatnice] AS [idIzdatnice], 
+      [stavkeIzdatnice].[kolicina] AS [kolicina]
+      FROM [dbo].[stavkeIzdatnice] AS [stavkeIzdatnice]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="stavkeNarudzbenice" EntityType="T23_Enigma2Model.Store.stavkeNarudzbenice" store:Type="Tables" store:Schema="dbo" store:Name="stavkeNarudzbenice">
+            <DefiningQuery>SELECT 
+      [stavkeNarudzbenice].[kolicina] AS [kolicina], 
+      [stavkeNarudzbenice].[idNarudzbenice] AS [idNarudzbenice], 
+      [stavkeNarudzbenice].[idRepromaterijala] AS [idRepromaterijala]
+      FROM [dbo].[stavkeNarudzbenice] AS [stavkeNarudzbenice]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="stavkeOtpremnice" EntityType="T23_Enigma2Model.Store.stavkeOtpremnice" store:Type="Tables" store:Schema="dbo" store:Name="stavkeOtpremnice">
+            <DefiningQuery>SELECT 
+      [stavkeOtpremnice].[idArtikla] AS [idArtikla], 
+      [stavkeOtpremnice].[idOtpremnice] AS [idOtpremnice], 
+      [stavkeOtpremnice].[kolicina] AS [kolicina]
+      FROM [dbo].[stavkeOtpremnice] AS [stavkeOtpremnice]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="stavkePrimke" EntityType="T23_Enigma2Model.Store.stavkePrimke" store:Type="Tables" store:Schema="dbo" store:Name="stavkePrimke">
+            <DefiningQuery>SELECT 
+      [stavkePrimke].[idArtikla] AS [idArtikla], 
+      [stavkePrimke].[idPrimke] AS [idPrimke], 
+      [stavkePrimke].[kolicina] AS [kolicina]
+      FROM [dbo].[stavkePrimke] AS [stavkePrimke]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Stroj" EntityType="T23_Enigma2Model.Store.Stroj" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tipKorisnika" EntityType="T23_Enigma2Model.Store.tipKorisnika" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Utrosak" EntityType="T23_Enigma2Model.Store.Utrosak" store:Type="Tables" store:Schema="dbo" store:Name="Utrosak">
+            <DefiningQuery>SELECT 
+      [Utrosak].[idRepromaterijala] AS [idRepromaterijala], 
+      [Utrosak].[idArtikla] AS [idArtikla], 
+      [Utrosak].[kolicina] AS [kolicina]
+      FROM [dbo].[Utrosak] AS [Utrosak]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Djelatnik_Stroj" Association="T23_Enigma2Model.Store.FK_Djelatnik_Stroj">
+            <End Role="Stroj" EntitySet="Stroj" />
+            <End Role="Djelatnik" EntitySet="Djelatnik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Izdatnica_knjizenjeDokumenta" Association="T23_Enigma2Model.Store.FK_Izdatnica_knjizenjeDokumenta">
+            <End Role="knjizenjeDokumenta" EntitySet="knjizenjeDokumenta" />
+            <End Role="Izdatnica" EntitySet="Izdatnica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Korisnik_tipKorisnika" Association="T23_Enigma2Model.Store.FK_Korisnik_tipKorisnika">
+            <End Role="tipKorisnika" EntitySet="tipKorisnika" />
+            <End Role="Korisnik" EntitySet="Korisnik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudzbenica_ToTable" Association="T23_Enigma2Model.Store.FK_Narudzbenica_ToTable">
+            <End Role="poslovniPartner" EntitySet="poslovniPartner" />
+            <End Role="Narudzbenica" EntitySet="Narudzbenica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudzbenica_ToTable_1" Association="T23_Enigma2Model.Store.FK_Narudzbenica_ToTable_1">
+            <End Role="knjizenjeDokumenta" EntitySet="knjizenjeDokumenta" />
+            <End Role="Narudzbenica" EntitySet="Narudzbenica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Otpremnica_knjizenjeDokumenta" Association="T23_Enigma2Model.Store.FK_Otpremnica_knjizenjeDokumenta">
+            <End Role="knjizenjeDokumenta" EntitySet="knjizenjeDokumenta" />
+            <End Role="Otpremnica" EntitySet="Otpremnica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Otpremnica_ToTable" Association="T23_Enigma2Model.Store.FK_Otpremnica_ToTable">
+            <End Role="poslovniPartner" EntitySet="poslovniPartner" />
+            <End Role="Otpremnica" EntitySet="Otpremnica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_pracenjeProizvodnje_ToTable" Association="T23_Enigma2Model.Store.FK_pracenjeProizvodnje_ToTable">
+            <End Role="Djelatnik" EntitySet="Djelatnik" />
+            <End Role="pracenjeProizvodnje" EntitySet="pracenjeProizvodnje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_pracenjeProizvodnje_ToTable_1" Association="T23_Enigma2Model.Store.FK_pracenjeProizvodnje_ToTable_1">
+            <End Role="Stroj" EntitySet="Stroj" />
+            <End Role="pracenjeProizvodnje" EntitySet="pracenjeProizvodnje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Primka_knjizenjeDokumenta" Association="T23_Enigma2Model.Store.FK_Primka_knjizenjeDokumenta">
+            <End Role="knjizenjeDokumenta" EntitySet="knjizenjeDokumenta" />
+            <End Role="Primka" EntitySet="Primka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_stavkeIzdatnice_Artikli" Association="T23_Enigma2Model.Store.FK_stavkeIzdatnice_Artikli">
+            <End Role="Artikli" EntitySet="Artikli" />
+            <End Role="stavkeIzdatnice" EntitySet="stavkeIzdatnice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_stavkeIzdatnice_Izdatnica" Association="T23_Enigma2Model.Store.FK_stavkeIzdatnice_Izdatnica">
+            <End Role="Izdatnica" EntitySet="Izdatnica" />
+            <End Role="stavkeIzdatnice" EntitySet="stavkeIzdatnice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_stavkeNarudzbenice_ToTable" Association="T23_Enigma2Model.Store.FK_stavkeNarudzbenice_ToTable">
+            <End Role="Narudzbenica" EntitySet="Narudzbenica" />
+            <End Role="stavkeNarudzbenice" EntitySet="stavkeNarudzbenice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_stavkeNarudzbenice_ToTable_1" Association="T23_Enigma2Model.Store.FK_stavkeNarudzbenice_ToTable_1">
+            <End Role="Repromaterijali" EntitySet="Repromaterijali" />
+            <End Role="stavkeNarudzbenice" EntitySet="stavkeNarudzbenice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_stavkeOtpremnice_Artikli" Association="T23_Enigma2Model.Store.FK_stavkeOtpremnice_Artikli">
+            <End Role="Artikli" EntitySet="Artikli" />
+            <End Role="stavkeOtpremnice" EntitySet="stavkeOtpremnice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_stavkeOtpremnice_Otpremnica" Association="T23_Enigma2Model.Store.FK_stavkeOtpremnice_Otpremnica">
+            <End Role="Otpremnica" EntitySet="Otpremnica" />
+            <End Role="stavkeOtpremnice" EntitySet="stavkeOtpremnice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_stavkePrimke_Artikli" Association="T23_Enigma2Model.Store.FK_stavkePrimke_Artikli">
+            <End Role="Artikli" EntitySet="Artikli" />
+            <End Role="stavkePrimke" EntitySet="stavkePrimke" />
+          </AssociationSet>
+          <AssociationSet Name="FK_stavkePrimke_Primka" Association="T23_Enigma2Model.Store.FK_stavkePrimke_Primka">
+            <End Role="Primka" EntitySet="Primka" />
+            <End Role="stavkePrimke" EntitySet="stavkePrimke" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Utrosak_ToTable" Association="T23_Enigma2Model.Store.FK_Utrosak_ToTable">
+            <End Role="Repromaterijali" EntitySet="Repromaterijali" />
+            <End Role="Utrosak" EntitySet="Utrosak" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Utrosak_ToTable_1" Association="T23_Enigma2Model.Store.FK_Utrosak_ToTable_1">
+            <End Role="Artikli" EntitySet="Artikli" />
+            <End Role="Utrosak" EntitySet="Utrosak" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Artikli">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" />
+          <Property Name="opis" Type="text" />
+          <Property Name="boja" Type="varchar" MaxLength="50" />
+          <Property Name="kolicina" Type="int" />
+          <Property Name="klasa" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Djelatnik">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ime" Type="varchar" MaxLength="50" />
+          <Property Name="prezime" Type="varchar" MaxLength="50" />
+          <Property Name="strucnaSprema" Type="varchar" MaxLength="50" />
+          <Property Name="stroj" Type="int" Nullable="false" />
+          <Property Name="adresa" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Izdatnica">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" />
+          <Property Name="boja" Type="varchar" MaxLength="50" />
+          <Property Name="datum" Type="date" />
+          <Property Name="knjizenjeDok" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="knjizenjeDokumenta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Korisnik">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="korisnickoIme" Type="varchar" MaxLength="50" />
+          <Property Name="lozinka" Type="varchar" MaxLength="50" />
+          <Property Name="tipKorisnika" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Narudzbenica">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" />
+          <Property Name="opis" Type="text" />
+          <Property Name="datum" Type="date" />
+          <Property Name="poslovniPart" Type="int" Nullable="false" />
+          <Property Name="knjizDok" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Otpremnica">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" />
+          <Property Name="odrediste" Type="text" />
+          <Property Name="datumOtpreme" Type="date" />
+          <Property Name="opis" Type="text" />
+          <Property Name="knjizenjeDok" Type="int" Nullable="false" />
+          <Property Name="poslPartner" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="poslovniPartner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" />
+          <Property Name="adresa" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\BUBA\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\COMPROMPLUSDOO\COMPROMPLUSDOO\T23_ENIGMA2.MDF.dbo.pracenjeProizvodnje' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="pracenjeProizvodnje">
+          <Key>
+            <PropertyRef Name="idDjelatnika" />
+            <PropertyRef Name="idStroja" />
+          </Key>
+          <Property Name="idDjelatnika" Type="int" Nullable="false" />
+          <Property Name="idStroja" Type="int" Nullable="false" />
+          <Property Name="kolicina" Type="int" />
+        </EntityType>
+        <EntityType Name="Primka">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" />
+          <Property Name="datumZaprimanja" Type="date" />
+          <Property Name="opis" Type="varchar" MaxLength="50" />
+          <Property Name="knjizenjeDok" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Repromaterijali">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" />
+          <Property Name="opis" Type="text" />
+          <Property Name="kolicina" Type="int" />
+          <Property Name="boja" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\BUBA\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\COMPROMPLUSDOO\COMPROMPLUSDOO\T23_ENIGMA2.MDF.dbo.stavkeIzdatnice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="stavkeIzdatnice">
+          <Key>
+            <PropertyRef Name="idArtikla" />
+            <PropertyRef Name="idIzdatnice" />
+          </Key>
+          <Property Name="idArtikla" Type="int" Nullable="false" />
+          <Property Name="idIzdatnice" Type="int" Nullable="false" />
+          <Property Name="kolicina" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\BUBA\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\COMPROMPLUSDOO\COMPROMPLUSDOO\T23_ENIGMA2.MDF.dbo.stavkeNarudzbenice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="stavkeNarudzbenice">
+          <Key>
+            <PropertyRef Name="idNarudzbenice" />
+            <PropertyRef Name="idRepromaterijala" />
+          </Key>
+          <Property Name="kolicina" Type="int" />
+          <Property Name="idNarudzbenice" Type="int" Nullable="false" />
+          <Property Name="idRepromaterijala" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\BUBA\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\COMPROMPLUSDOO\COMPROMPLUSDOO\T23_ENIGMA2.MDF.dbo.stavkeOtpremnice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="stavkeOtpremnice">
+          <Key>
+            <PropertyRef Name="idArtikla" />
+            <PropertyRef Name="idOtpremnice" />
+          </Key>
+          <Property Name="idArtikla" Type="int" Nullable="false" />
+          <Property Name="idOtpremnice" Type="int" Nullable="false" />
+          <Property Name="kolicina" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\BUBA\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\COMPROMPLUSDOO\COMPROMPLUSDOO\T23_ENIGMA2.MDF.dbo.stavkePrimke' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="stavkePrimke">
+          <Key>
+            <PropertyRef Name="idArtikla" />
+            <PropertyRef Name="idPrimke" />
+          </Key>
+          <Property Name="idArtikla" Type="int" Nullable="false" />
+          <Property Name="idPrimke" Type="int" Nullable="false" />
+          <Property Name="kolicina" Type="int" />
+        </EntityType>
+        <EntityType Name="Stroj">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="naziv" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tipKorisnika">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="uloga" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'C:\USERS\BUBA\DOCUMENTS\VISUAL STUDIO 2012\PROJECTS\COMPROMPLUSDOO\COMPROMPLUSDOO\T23_ENIGMA2.MDF.dbo.Utrosak' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Utrosak">
+          <Key>
+            <PropertyRef Name="idRepromaterijala" />
+            <PropertyRef Name="idArtikla" />
+          </Key>
+          <Property Name="idRepromaterijala" Type="int" Nullable="false" />
+          <Property Name="idArtikla" Type="int" Nullable="false" />
+          <Property Name="kolicina" Type="int" />
+        </EntityType>
+        <Association Name="FK_Djelatnik_Stroj">
+          <End Role="Stroj" Type="T23_Enigma2Model.Store.Stroj" Multiplicity="1" />
+          <End Role="Djelatnik" Type="T23_Enigma2Model.Store.Djelatnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stroj">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Djelatnik">
+              <PropertyRef Name="stroj" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Izdatnica_knjizenjeDokumenta">
+          <End Role="knjizenjeDokumenta" Type="T23_Enigma2Model.Store.knjizenjeDokumenta" Multiplicity="1" />
+          <End Role="Izdatnica" Type="T23_Enigma2Model.Store.Izdatnica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="knjizenjeDokumenta">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Izdatnica">
+              <PropertyRef Name="knjizenjeDok" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Korisnik_tipKorisnika">
+          <End Role="tipKorisnika" Type="T23_Enigma2Model.Store.tipKorisnika" Multiplicity="1" />
+          <End Role="Korisnik" Type="T23_Enigma2Model.Store.Korisnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipKorisnika">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Korisnik">
+              <PropertyRef Name="tipKorisnika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narudzbenica_ToTable">
+          <End Role="poslovniPartner" Type="T23_Enigma2Model.Store.poslovniPartner" Multiplicity="1" />
+          <End Role="Narudzbenica" Type="T23_Enigma2Model.Store.Narudzbenica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="poslovniPartner">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Narudzbenica">
+              <PropertyRef Name="poslovniPart" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narudzbenica_ToTable_1">
+          <End Role="knjizenjeDokumenta" Type="T23_Enigma2Model.Store.knjizenjeDokumenta" Multiplicity="1" />
+          <End Role="Narudzbenica" Type="T23_Enigma2Model.Store.Narudzbenica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="knjizenjeDokumenta">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Narudzbenica">
+              <PropertyRef Name="knjizDok" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Otpremnica_knjizenjeDokumenta">
+          <End Role="knjizenjeDokumenta" Type="T23_Enigma2Model.Store.knjizenjeDokumenta" Multiplicity="1" />
+          <End Role="Otpremnica" Type="T23_Enigma2Model.Store.Otpremnica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="knjizenjeDokumenta">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Otpremnica">
+              <PropertyRef Name="knjizenjeDok" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Otpremnica_ToTable">
+          <End Role="poslovniPartner" Type="T23_Enigma2Model.Store.poslovniPartner" Multiplicity="1" />
+          <End Role="Otpremnica" Type="T23_Enigma2Model.Store.Otpremnica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="poslovniPartner">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Otpremnica">
+              <PropertyRef Name="poslPartner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_pracenjeProizvodnje_ToTable">
+          <End Role="Djelatnik" Type="T23_Enigma2Model.Store.Djelatnik" Multiplicity="1" />
+          <End Role="pracenjeProizvodnje" Type="T23_Enigma2Model.Store.pracenjeProizvodnje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Djelatnik">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="pracenjeProizvodnje">
+              <PropertyRef Name="idDjelatnika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_pracenjeProizvodnje_ToTable_1">
+          <End Role="Stroj" Type="T23_Enigma2Model.Store.Stroj" Multiplicity="1" />
+          <End Role="pracenjeProizvodnje" Type="T23_Enigma2Model.Store.pracenjeProizvodnje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stroj">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="pracenjeProizvodnje">
+              <PropertyRef Name="idStroja" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Primka_knjizenjeDokumenta">
+          <End Role="knjizenjeDokumenta" Type="T23_Enigma2Model.Store.knjizenjeDokumenta" Multiplicity="1" />
+          <End Role="Primka" Type="T23_Enigma2Model.Store.Primka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="knjizenjeDokumenta">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Primka">
+              <PropertyRef Name="knjizenjeDok" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_stavkeIzdatnice_Artikli">
+          <End Role="Artikli" Type="T23_Enigma2Model.Store.Artikli" Multiplicity="1" />
+          <End Role="stavkeIzdatnice" Type="T23_Enigma2Model.Store.stavkeIzdatnice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikli">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="stavkeIzdatnice">
+              <PropertyRef Name="idArtikla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_stavkeIzdatnice_Izdatnica">
+          <End Role="Izdatnica" Type="T23_Enigma2Model.Store.Izdatnica" Multiplicity="1" />
+          <End Role="stavkeIzdatnice" Type="T23_Enigma2Model.Store.stavkeIzdatnice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Izdatnica">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="stavkeIzdatnice">
+              <PropertyRef Name="idIzdatnice" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_stavkeNarudzbenice_ToTable">
+          <End Role="Narudzbenica" Type="T23_Enigma2Model.Store.Narudzbenica" Multiplicity="1" />
+          <End Role="stavkeNarudzbenice" Type="T23_Enigma2Model.Store.stavkeNarudzbenice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Narudzbenica">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="stavkeNarudzbenice">
+              <PropertyRef Name="idNarudzbenice" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_stavkeNarudzbenice_ToTable_1">
+          <End Role="Repromaterijali" Type="T23_Enigma2Model.Store.Repromaterijali" Multiplicity="1" />
+          <End Role="stavkeNarudzbenice" Type="T23_Enigma2Model.Store.stavkeNarudzbenice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Repromaterijali">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="stavkeNarudzbenice">
+              <PropertyRef Name="idRepromaterijala" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_stavkeOtpremnice_Artikli">
+          <End Role="Artikli" Type="T23_Enigma2Model.Store.Artikli" Multiplicity="1" />
+          <End Role="stavkeOtpremnice" Type="T23_Enigma2Model.Store.stavkeOtpremnice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikli">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="stavkeOtpremnice">
+              <PropertyRef Name="idArtikla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_stavkeOtpremnice_Otpremnica">
+          <End Role="Otpremnica" Type="T23_Enigma2Model.Store.Otpremnica" Multiplicity="1" />
+          <End Role="stavkeOtpremnice" Type="T23_Enigma2Model.Store.stavkeOtpremnice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Otpremnica">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="stavkeOtpremnice">
+              <PropertyRef Name="idOtpremnice" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_stavkePrimke_Artikli">
+          <End Role="Artikli" Type="T23_Enigma2Model.Store.Artikli" Multiplicity="1" />
+          <End Role="stavkePrimke" Type="T23_Enigma2Model.Store.stavkePrimke" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikli">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="stavkePrimke">
+              <PropertyRef Name="idArtikla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_stavkePrimke_Primka">
+          <End Role="Primka" Type="T23_Enigma2Model.Store.Primka" Multiplicity="1" />
+          <End Role="stavkePrimke" Type="T23_Enigma2Model.Store.stavkePrimke" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Primka">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="stavkePrimke">
+              <PropertyRef Name="idPrimke" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Utrosak_ToTable">
+          <End Role="Repromaterijali" Type="T23_Enigma2Model.Store.Repromaterijali" Multiplicity="1" />
+          <End Role="Utrosak" Type="T23_Enigma2Model.Store.Utrosak" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Repromaterijali">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Utrosak">
+              <PropertyRef Name="idRepromaterijala" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Utrosak_ToTable_1">
+          <End Role="Artikli" Type="T23_Enigma2Model.Store.Artikli" Multiplicity="1" />
+          <End Role="Utrosak" Type="T23_Enigma2Model.Store.Utrosak" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikli">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Utrosak">
+              <PropertyRef Name="idArtikla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="T23_Enigma2Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="T23_Enigma2Entities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Artikli" EntityType="T23_Enigma2Model.Artikli" />
+          <EntitySet Name="Djelatnik" EntityType="T23_Enigma2Model.Djelatnik" />
+          <EntitySet Name="Izdatnica" EntityType="T23_Enigma2Model.Izdatnica" />
+          <EntitySet Name="knjizenjeDokumenta" EntityType="T23_Enigma2Model.knjizenjeDokumenta" />
+          <EntitySet Name="Korisnik" EntityType="T23_Enigma2Model.Korisnik" />
+          <EntitySet Name="Narudzbenica" EntityType="T23_Enigma2Model.Narudzbenica" />
+          <EntitySet Name="Otpremnica" EntityType="T23_Enigma2Model.Otpremnica" />
+          <EntitySet Name="poslovniPartner" EntityType="T23_Enigma2Model.poslovniPartner" />
+          <EntitySet Name="pracenjeProizvodnje" EntityType="T23_Enigma2Model.pracenjeProizvodnje" />
+          <EntitySet Name="Primka" EntityType="T23_Enigma2Model.Primka" />
+          <EntitySet Name="Repromaterijali" EntityType="T23_Enigma2Model.Repromaterijali" />
+          <EntitySet Name="stavkeIzdatnice" EntityType="T23_Enigma2Model.stavkeIzdatnice" />
+          <EntitySet Name="stavkeNarudzbenice" EntityType="T23_Enigma2Model.stavkeNarudzbenice" />
+          <EntitySet Name="stavkeOtpremnice" EntityType="T23_Enigma2Model.stavkeOtpremnice" />
+          <EntitySet Name="stavkePrimke" EntityType="T23_Enigma2Model.stavkePrimke" />
+          <EntitySet Name="Stroj" EntityType="T23_Enigma2Model.Stroj" />
+          <EntitySet Name="tipKorisnika" EntityType="T23_Enigma2Model.tipKorisnika" />
+          <EntitySet Name="Utrosak" EntityType="T23_Enigma2Model.Utrosak" />
+          <AssociationSet Name="FK_stavkeIzdatnice_Artikli" Association="T23_Enigma2Model.FK_stavkeIzdatnice_Artikli">
+            <End Role="Artikli" EntitySet="Artikli" />
+            <End Role="stavkeIzdatnice" EntitySet="stavkeIzdatnice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_stavkeOtpremnice_Artikli" Association="T23_Enigma2Model.FK_stavkeOtpremnice_Artikli">
+            <End Role="Artikli" EntitySet="Artikli" />
+            <End Role="stavkeOtpremnice" EntitySet="stavkeOtpremnice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_stavkePrimke_Artikli" Association="T23_Enigma2Model.FK_stavkePrimke_Artikli">
+            <End Role="Artikli" EntitySet="Artikli" />
+            <End Role="stavkePrimke" EntitySet="stavkePrimke" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Utrosak_ToTable_1" Association="T23_Enigma2Model.FK_Utrosak_ToTable_1">
+            <End Role="Artikli" EntitySet="Artikli" />
+            <End Role="Utrosak" EntitySet="Utrosak" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Djelatnik_Stroj" Association="T23_Enigma2Model.FK_Djelatnik_Stroj">
+            <End Role="Stroj" EntitySet="Stroj" />
+            <End Role="Djelatnik" EntitySet="Djelatnik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_pracenjeProizvodnje_ToTable" Association="T23_Enigma2Model.FK_pracenjeProizvodnje_ToTable">
+            <End Role="Djelatnik" EntitySet="Djelatnik" />
+            <End Role="pracenjeProizvodnje" EntitySet="pracenjeProizvodnje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Izdatnica_knjizenjeDokumenta" Association="T23_Enigma2Model.FK_Izdatnica_knjizenjeDokumenta">
+            <End Role="knjizenjeDokumenta" EntitySet="knjizenjeDokumenta" />
+            <End Role="Izdatnica" EntitySet="Izdatnica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_stavkeIzdatnice_Izdatnica" Association="T23_Enigma2Model.FK_stavkeIzdatnice_Izdatnica">
+            <End Role="Izdatnica" EntitySet="Izdatnica" />
+            <End Role="stavkeIzdatnice" EntitySet="stavkeIzdatnice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudzbenica_ToTable_1" Association="T23_Enigma2Model.FK_Narudzbenica_ToTable_1">
+            <End Role="knjizenjeDokumenta" EntitySet="knjizenjeDokumenta" />
+            <End Role="Narudzbenica" EntitySet="Narudzbenica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Otpremnica_knjizenjeDokumenta" Association="T23_Enigma2Model.FK_Otpremnica_knjizenjeDokumenta">
+            <End Role="knjizenjeDokumenta" EntitySet="knjizenjeDokumenta" />
+            <End Role="Otpremnica" EntitySet="Otpremnica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Primka_knjizenjeDokumenta" Association="T23_Enigma2Model.FK_Primka_knjizenjeDokumenta">
+            <End Role="knjizenjeDokumenta" EntitySet="knjizenjeDokumenta" />
+            <End Role="Primka" EntitySet="Primka" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Korisnik_tipKorisnika" Association="T23_Enigma2Model.FK_Korisnik_tipKorisnika">
+            <End Role="tipKorisnika" EntitySet="tipKorisnika" />
+            <End Role="Korisnik" EntitySet="Korisnik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Narudzbenica_ToTable" Association="T23_Enigma2Model.FK_Narudzbenica_ToTable">
+            <End Role="poslovniPartner" EntitySet="poslovniPartner" />
+            <End Role="Narudzbenica" EntitySet="Narudzbenica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_stavkeNarudzbenice_ToTable" Association="T23_Enigma2Model.FK_stavkeNarudzbenice_ToTable">
+            <End Role="Narudzbenica" EntitySet="Narudzbenica" />
+            <End Role="stavkeNarudzbenice" EntitySet="stavkeNarudzbenice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Otpremnica_ToTable" Association="T23_Enigma2Model.FK_Otpremnica_ToTable">
+            <End Role="poslovniPartner" EntitySet="poslovniPartner" />
+            <End Role="Otpremnica" EntitySet="Otpremnica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_stavkeOtpremnice_Otpremnica" Association="T23_Enigma2Model.FK_stavkeOtpremnice_Otpremnica">
+            <End Role="Otpremnica" EntitySet="Otpremnica" />
+            <End Role="stavkeOtpremnice" EntitySet="stavkeOtpremnice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_pracenjeProizvodnje_ToTable_1" Association="T23_Enigma2Model.FK_pracenjeProizvodnje_ToTable_1">
+            <End Role="Stroj" EntitySet="Stroj" />
+            <End Role="pracenjeProizvodnje" EntitySet="pracenjeProizvodnje" />
+          </AssociationSet>
+          <AssociationSet Name="FK_stavkePrimke_Primka" Association="T23_Enigma2Model.FK_stavkePrimke_Primka">
+            <End Role="Primka" EntitySet="Primka" />
+            <End Role="stavkePrimke" EntitySet="stavkePrimke" />
+          </AssociationSet>
+          <AssociationSet Name="FK_stavkeNarudzbenice_ToTable_1" Association="T23_Enigma2Model.FK_stavkeNarudzbenice_ToTable_1">
+            <End Role="Repromaterijali" EntitySet="Repromaterijali" />
+            <End Role="stavkeNarudzbenice" EntitySet="stavkeNarudzbenice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Utrosak_ToTable" Association="T23_Enigma2Model.FK_Utrosak_ToTable">
+            <End Role="Repromaterijali" EntitySet="Repromaterijali" />
+            <End Role="Utrosak" EntitySet="Utrosak" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Artikli">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="opis" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="boja" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="kolicina" Type="Int32" />
+          <Property Name="klasa" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="stavkeIzdatnice" Relationship="T23_Enigma2Model.FK_stavkeIzdatnice_Artikli" FromRole="Artikli" ToRole="stavkeIzdatnice" />
+          <NavigationProperty Name="stavkeOtpremnice" Relationship="T23_Enigma2Model.FK_stavkeOtpremnice_Artikli" FromRole="Artikli" ToRole="stavkeOtpremnice" />
+          <NavigationProperty Name="stavkePrimke" Relationship="T23_Enigma2Model.FK_stavkePrimke_Artikli" FromRole="Artikli" ToRole="stavkePrimke" />
+          <NavigationProperty Name="Utrosak" Relationship="T23_Enigma2Model.FK_Utrosak_ToTable_1" FromRole="Artikli" ToRole="Utrosak" />
+        </EntityType>
+        <EntityType Name="Djelatnik">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="prezime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="strucnaSprema" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="stroj" Type="Int32" Nullable="false" />
+          <Property Name="adresa" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Stroj1" Relationship="T23_Enigma2Model.FK_Djelatnik_Stroj" FromRole="Djelatnik" ToRole="Stroj" />
+          <NavigationProperty Name="pracenjeProizvodnje" Relationship="T23_Enigma2Model.FK_pracenjeProizvodnje_ToTable" FromRole="Djelatnik" ToRole="pracenjeProizvodnje" />
+        </EntityType>
+        <EntityType Name="Izdatnica">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="boja" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="datum" Type="DateTime" Precision="0" />
+          <Property Name="knjizenjeDok" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="knjizenjeDokumenta" Relationship="T23_Enigma2Model.FK_Izdatnica_knjizenjeDokumenta" FromRole="Izdatnica" ToRole="knjizenjeDokumenta" />
+          <NavigationProperty Name="stavkeIzdatnice" Relationship="T23_Enigma2Model.FK_stavkeIzdatnice_Izdatnica" FromRole="Izdatnica" ToRole="stavkeIzdatnice" />
+        </EntityType>
+        <EntityType Name="knjizenjeDokumenta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Izdatnica" Relationship="T23_Enigma2Model.FK_Izdatnica_knjizenjeDokumenta" FromRole="knjizenjeDokumenta" ToRole="Izdatnica" />
+          <NavigationProperty Name="Narudzbenica" Relationship="T23_Enigma2Model.FK_Narudzbenica_ToTable_1" FromRole="knjizenjeDokumenta" ToRole="Narudzbenica" />
+          <NavigationProperty Name="Otpremnica" Relationship="T23_Enigma2Model.FK_Otpremnica_knjizenjeDokumenta" FromRole="knjizenjeDokumenta" ToRole="Otpremnica" />
+          <NavigationProperty Name="Primka" Relationship="T23_Enigma2Model.FK_Primka_knjizenjeDokumenta" FromRole="knjizenjeDokumenta" ToRole="Primka" />
+        </EntityType>
+        <EntityType Name="Korisnik">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="korisnickoIme" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="lozinka" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="tipKorisnika" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tipKorisnika1" Relationship="T23_Enigma2Model.FK_Korisnik_tipKorisnika" FromRole="Korisnik" ToRole="tipKorisnika" />
+        </EntityType>
+        <EntityType Name="Narudzbenica">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="opis" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="datum" Type="DateTime" Precision="0" />
+          <Property Name="poslovniPart" Type="Int32" Nullable="false" />
+          <Property Name="knjizDok" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="knjizenjeDokumenta" Relationship="T23_Enigma2Model.FK_Narudzbenica_ToTable_1" FromRole="Narudzbenica" ToRole="knjizenjeDokumenta" />
+          <NavigationProperty Name="poslovniPartner" Relationship="T23_Enigma2Model.FK_Narudzbenica_ToTable" FromRole="Narudzbenica" ToRole="poslovniPartner" />
+          <NavigationProperty Name="stavkeNarudzbenice" Relationship="T23_Enigma2Model.FK_stavkeNarudzbenice_ToTable" FromRole="Narudzbenica" ToRole="stavkeNarudzbenice" />
+        </EntityType>
+        <EntityType Name="Otpremnica">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="odrediste" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="datumOtpreme" Type="DateTime" Precision="0" />
+          <Property Name="opis" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="knjizenjeDok" Type="Int32" Nullable="false" />
+          <Property Name="poslPartner" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="knjizenjeDokumenta" Relationship="T23_Enigma2Model.FK_Otpremnica_knjizenjeDokumenta" FromRole="Otpremnica" ToRole="knjizenjeDokumenta" />
+          <NavigationProperty Name="poslovniPartner" Relationship="T23_Enigma2Model.FK_Otpremnica_ToTable" FromRole="Otpremnica" ToRole="poslovniPartner" />
+          <NavigationProperty Name="stavkeOtpremnice" Relationship="T23_Enigma2Model.FK_stavkeOtpremnice_Otpremnica" FromRole="Otpremnica" ToRole="stavkeOtpremnice" />
+        </EntityType>
+        <EntityType Name="poslovniPartner">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="adresa" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Narudzbenica" Relationship="T23_Enigma2Model.FK_Narudzbenica_ToTable" FromRole="poslovniPartner" ToRole="Narudzbenica" />
+          <NavigationProperty Name="Otpremnica" Relationship="T23_Enigma2Model.FK_Otpremnica_ToTable" FromRole="poslovniPartner" ToRole="Otpremnica" />
+        </EntityType>
+        <EntityType Name="pracenjeProizvodnje">
+          <Key>
+            <PropertyRef Name="idDjelatnika" />
+            <PropertyRef Name="idStroja" />
+          </Key>
+          <Property Name="idDjelatnika" Type="Int32" Nullable="false" />
+          <Property Name="idStroja" Type="Int32" Nullable="false" />
+          <Property Name="kolicina" Type="Int32" />
+          <NavigationProperty Name="Djelatnik" Relationship="T23_Enigma2Model.FK_pracenjeProizvodnje_ToTable" FromRole="pracenjeProizvodnje" ToRole="Djelatnik" />
+          <NavigationProperty Name="Stroj" Relationship="T23_Enigma2Model.FK_pracenjeProizvodnje_ToTable_1" FromRole="pracenjeProizvodnje" ToRole="Stroj" />
+        </EntityType>
+        <EntityType Name="Primka">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="datumZaprimanja" Type="DateTime" Precision="0" />
+          <Property Name="opis" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="knjizenjeDok" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="knjizenjeDokumenta" Relationship="T23_Enigma2Model.FK_Primka_knjizenjeDokumenta" FromRole="Primka" ToRole="knjizenjeDokumenta" />
+          <NavigationProperty Name="stavkePrimke" Relationship="T23_Enigma2Model.FK_stavkePrimke_Primka" FromRole="Primka" ToRole="stavkePrimke" />
+        </EntityType>
+        <EntityType Name="Repromaterijali">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="opis" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="kolicina" Type="Int32" />
+          <Property Name="boja" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="stavkeNarudzbenice" Relationship="T23_Enigma2Model.FK_stavkeNarudzbenice_ToTable_1" FromRole="Repromaterijali" ToRole="stavkeNarudzbenice" />
+          <NavigationProperty Name="Utrosak" Relationship="T23_Enigma2Model.FK_Utrosak_ToTable" FromRole="Repromaterijali" ToRole="Utrosak" />
+        </EntityType>
+        <EntityType Name="stavkeIzdatnice">
+          <Key>
+            <PropertyRef Name="idArtikla" />
+            <PropertyRef Name="idIzdatnice" />
+          </Key>
+          <Property Name="idArtikla" Type="Int32" Nullable="false" />
+          <Property Name="idIzdatnice" Type="Int32" Nullable="false" />
+          <Property Name="kolicina" Type="Int32" />
+          <NavigationProperty Name="Artikli" Relationship="T23_Enigma2Model.FK_stavkeIzdatnice_Artikli" FromRole="stavkeIzdatnice" ToRole="Artikli" />
+          <NavigationProperty Name="Izdatnica" Relationship="T23_Enigma2Model.FK_stavkeIzdatnice_Izdatnica" FromRole="stavkeIzdatnice" ToRole="Izdatnica" />
+        </EntityType>
+        <EntityType Name="stavkeNarudzbenice">
+          <Key>
+            <PropertyRef Name="idNarudzbenice" />
+            <PropertyRef Name="idRepromaterijala" />
+          </Key>
+          <Property Name="kolicina" Type="Int32" />
+          <Property Name="idNarudzbenice" Type="Int32" Nullable="false" />
+          <Property Name="idRepromaterijala" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Narudzbenica" Relationship="T23_Enigma2Model.FK_stavkeNarudzbenice_ToTable" FromRole="stavkeNarudzbenice" ToRole="Narudzbenica" />
+          <NavigationProperty Name="Repromaterijali" Relationship="T23_Enigma2Model.FK_stavkeNarudzbenice_ToTable_1" FromRole="stavkeNarudzbenice" ToRole="Repromaterijali" />
+        </EntityType>
+        <EntityType Name="stavkeOtpremnice">
+          <Key>
+            <PropertyRef Name="idArtikla" />
+            <PropertyRef Name="idOtpremnice" />
+          </Key>
+          <Property Name="idArtikla" Type="Int32" Nullable="false" />
+          <Property Name="idOtpremnice" Type="Int32" Nullable="false" />
+          <Property Name="kolicina" Type="Int32" />
+          <NavigationProperty Name="Artikli" Relationship="T23_Enigma2Model.FK_stavkeOtpremnice_Artikli" FromRole="stavkeOtpremnice" ToRole="Artikli" />
+          <NavigationProperty Name="Otpremnica" Relationship="T23_Enigma2Model.FK_stavkeOtpremnice_Otpremnica" FromRole="stavkeOtpremnice" ToRole="Otpremnica" />
+        </EntityType>
+        <EntityType Name="stavkePrimke">
+          <Key>
+            <PropertyRef Name="idArtikla" />
+            <PropertyRef Name="idPrimke" />
+          </Key>
+          <Property Name="idArtikla" Type="Int32" Nullable="false" />
+          <Property Name="idPrimke" Type="Int32" Nullable="false" />
+          <Property Name="kolicina" Type="Int32" />
+          <NavigationProperty Name="Artikli" Relationship="T23_Enigma2Model.FK_stavkePrimke_Artikli" FromRole="stavkePrimke" ToRole="Artikli" />
+          <NavigationProperty Name="Primka" Relationship="T23_Enigma2Model.FK_stavkePrimke_Primka" FromRole="stavkePrimke" ToRole="Primka" />
+        </EntityType>
+        <EntityType Name="Stroj">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="naziv" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Djelatnik" Relationship="T23_Enigma2Model.FK_Djelatnik_Stroj" FromRole="Stroj" ToRole="Djelatnik" />
+          <NavigationProperty Name="pracenjeProizvodnje" Relationship="T23_Enigma2Model.FK_pracenjeProizvodnje_ToTable_1" FromRole="Stroj" ToRole="pracenjeProizvodnje" />
+        </EntityType>
+        <EntityType Name="tipKorisnika">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="uloga" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Korisnik" Relationship="T23_Enigma2Model.FK_Korisnik_tipKorisnika" FromRole="tipKorisnika" ToRole="Korisnik" />
+        </EntityType>
+        <EntityType Name="Utrosak">
+          <Key>
+            <PropertyRef Name="idRepromaterijala" />
+            <PropertyRef Name="idArtikla" />
+          </Key>
+          <Property Name="idRepromaterijala" Type="Int32" Nullable="false" />
+          <Property Name="idArtikla" Type="Int32" Nullable="false" />
+          <Property Name="kolicina" Type="Int32" />
+          <NavigationProperty Name="Artikli" Relationship="T23_Enigma2Model.FK_Utrosak_ToTable_1" FromRole="Utrosak" ToRole="Artikli" />
+          <NavigationProperty Name="Repromaterijali" Relationship="T23_Enigma2Model.FK_Utrosak_ToTable" FromRole="Utrosak" ToRole="Repromaterijali" />
+        </EntityType>
+        <Association Name="FK_stavkeIzdatnice_Artikli">
+          <End Role="Artikli" Type="T23_Enigma2Model.Artikli" Multiplicity="1" />
+          <End Role="stavkeIzdatnice" Type="T23_Enigma2Model.stavkeIzdatnice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikli">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="stavkeIzdatnice">
+              <PropertyRef Name="idArtikla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_stavkeOtpremnice_Artikli">
+          <End Role="Artikli" Type="T23_Enigma2Model.Artikli" Multiplicity="1" />
+          <End Role="stavkeOtpremnice" Type="T23_Enigma2Model.stavkeOtpremnice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikli">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="stavkeOtpremnice">
+              <PropertyRef Name="idArtikla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_stavkePrimke_Artikli">
+          <End Role="Artikli" Type="T23_Enigma2Model.Artikli" Multiplicity="1" />
+          <End Role="stavkePrimke" Type="T23_Enigma2Model.stavkePrimke" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikli">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="stavkePrimke">
+              <PropertyRef Name="idArtikla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Utrosak_ToTable_1">
+          <End Role="Artikli" Type="T23_Enigma2Model.Artikli" Multiplicity="1" />
+          <End Role="Utrosak" Type="T23_Enigma2Model.Utrosak" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artikli">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Utrosak">
+              <PropertyRef Name="idArtikla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Djelatnik_Stroj">
+          <End Role="Stroj" Type="T23_Enigma2Model.Stroj" Multiplicity="1" />
+          <End Role="Djelatnik" Type="T23_Enigma2Model.Djelatnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stroj">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Djelatnik">
+              <PropertyRef Name="stroj" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_pracenjeProizvodnje_ToTable">
+          <End Role="Djelatnik" Type="T23_Enigma2Model.Djelatnik" Multiplicity="1" />
+          <End Role="pracenjeProizvodnje" Type="T23_Enigma2Model.pracenjeProizvodnje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Djelatnik">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="pracenjeProizvodnje">
+              <PropertyRef Name="idDjelatnika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Izdatnica_knjizenjeDokumenta">
+          <End Role="knjizenjeDokumenta" Type="T23_Enigma2Model.knjizenjeDokumenta" Multiplicity="1" />
+          <End Role="Izdatnica" Type="T23_Enigma2Model.Izdatnica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="knjizenjeDokumenta">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Izdatnica">
+              <PropertyRef Name="knjizenjeDok" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_stavkeIzdatnice_Izdatnica">
+          <End Role="Izdatnica" Type="T23_Enigma2Model.Izdatnica" Multiplicity="1" />
+          <End Role="stavkeIzdatnice" Type="T23_Enigma2Model.stavkeIzdatnice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Izdatnica">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="stavkeIzdatnice">
+              <PropertyRef Name="idIzdatnice" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narudzbenica_ToTable_1">
+          <End Role="knjizenjeDokumenta" Type="T23_Enigma2Model.knjizenjeDokumenta" Multiplicity="1" />
+          <End Role="Narudzbenica" Type="T23_Enigma2Model.Narudzbenica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="knjizenjeDokumenta">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Narudzbenica">
+              <PropertyRef Name="knjizDok" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Otpremnica_knjizenjeDokumenta">
+          <End Role="knjizenjeDokumenta" Type="T23_Enigma2Model.knjizenjeDokumenta" Multiplicity="1" />
+          <End Role="Otpremnica" Type="T23_Enigma2Model.Otpremnica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="knjizenjeDokumenta">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Otpremnica">
+              <PropertyRef Name="knjizenjeDok" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Primka_knjizenjeDokumenta">
+          <End Role="knjizenjeDokumenta" Type="T23_Enigma2Model.knjizenjeDokumenta" Multiplicity="1" />
+          <End Role="Primka" Type="T23_Enigma2Model.Primka" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="knjizenjeDokumenta">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Primka">
+              <PropertyRef Name="knjizenjeDok" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Korisnik_tipKorisnika">
+          <End Role="tipKorisnika" Type="T23_Enigma2Model.tipKorisnika" Multiplicity="1" />
+          <End Role="Korisnik" Type="T23_Enigma2Model.Korisnik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipKorisnika">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Korisnik">
+              <PropertyRef Name="tipKorisnika" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Narudzbenica_ToTable">
+          <End Role="poslovniPartner" Type="T23_Enigma2Model.poslovniPartner" Multiplicity="1" />
+          <End Role="Narudzbenica" Type="T23_Enigma2Model.Narudzbenica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="poslovniPartner">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Narudzbenica">
+              <PropertyRef Name="poslovniPart" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_stavkeNarudzbenice_ToTable">
+          <End Role="Narudzbenica" Type="T23_Enigma2Model.Narudzbenica" Multiplicity="1" />
+          <End Role="stavkeNarudzbenice" Type="T23_Enigma2Model.stavkeNarudzbenice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Narudzbenica">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="stavkeNarudzbenice">
+              <PropertyRef Name="idNarudzbenice" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Otpremnica_ToTable">
+          <End Role="poslovniPartner" Type="T23_Enigma2Model.poslovniPartner" Multiplicity="1" />
+          <End Role="Otpremnica" Type="T23_Enigma2Model.Otpremnica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="poslovniPartner">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Otpremnica">
+              <PropertyRef Name="poslPartner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_stavkeOtpremnice_Otpremnica">
+          <End Role="Otpremnica" Type="T23_Enigma2Model.Otpremnica" Multiplicity="1" />
+          <End Role="stavkeOtpremnice" Type="T23_Enigma2Model.stavkeOtpremnice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Otpremnica">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="stavkeOtpremnice">
+              <PropertyRef Name="idOtpremnice" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_pracenjeProizvodnje_ToTable_1">
+          <End Role="Stroj" Type="T23_Enigma2Model.Stroj" Multiplicity="1" />
+          <End Role="pracenjeProizvodnje" Type="T23_Enigma2Model.pracenjeProizvodnje" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stroj">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="pracenjeProizvodnje">
+              <PropertyRef Name="idStroja" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_stavkePrimke_Primka">
+          <End Role="Primka" Type="T23_Enigma2Model.Primka" Multiplicity="1" />
+          <End Role="stavkePrimke" Type="T23_Enigma2Model.stavkePrimke" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Primka">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="stavkePrimke">
+              <PropertyRef Name="idPrimke" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_stavkeNarudzbenice_ToTable_1">
+          <End Role="Repromaterijali" Type="T23_Enigma2Model.Repromaterijali" Multiplicity="1" />
+          <End Role="stavkeNarudzbenice" Type="T23_Enigma2Model.stavkeNarudzbenice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Repromaterijali">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="stavkeNarudzbenice">
+              <PropertyRef Name="idRepromaterijala" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Utrosak_ToTable">
+          <End Role="Repromaterijali" Type="T23_Enigma2Model.Repromaterijali" Multiplicity="1" />
+          <End Role="Utrosak" Type="T23_Enigma2Model.Utrosak" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Repromaterijali">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Utrosak">
+              <PropertyRef Name="idRepromaterijala" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="T23_Enigma2ModelStoreContainer" CdmEntityContainer="T23_Enigma2Entities">
+          <EntitySetMapping Name="Artikli">
+            <EntityTypeMapping TypeName="T23_Enigma2Model.Artikli">
+              <MappingFragment StoreEntitySet="Artikli">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+                <ScalarProperty Name="boja" ColumnName="boja" />
+                <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+                <ScalarProperty Name="klasa" ColumnName="klasa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Djelatnik">
+            <EntityTypeMapping TypeName="T23_Enigma2Model.Djelatnik">
+              <MappingFragment StoreEntitySet="Djelatnik">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ime" ColumnName="ime" />
+                <ScalarProperty Name="prezime" ColumnName="prezime" />
+                <ScalarProperty Name="strucnaSprema" ColumnName="strucnaSprema" />
+                <ScalarProperty Name="stroj" ColumnName="stroj" />
+                <ScalarProperty Name="adresa" ColumnName="adresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Izdatnica">
+            <EntityTypeMapping TypeName="T23_Enigma2Model.Izdatnica">
+              <MappingFragment StoreEntitySet="Izdatnica">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="boja" ColumnName="boja" />
+                <ScalarProperty Name="datum" ColumnName="datum" />
+                <ScalarProperty Name="knjizenjeDok" ColumnName="knjizenjeDok" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="knjizenjeDokumenta">
+            <EntityTypeMapping TypeName="T23_Enigma2Model.knjizenjeDokumenta">
+              <MappingFragment StoreEntitySet="knjizenjeDokumenta">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Korisnik">
+            <EntityTypeMapping TypeName="T23_Enigma2Model.Korisnik">
+              <MappingFragment StoreEntitySet="Korisnik">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="korisnickoIme" ColumnName="korisnickoIme" />
+                <ScalarProperty Name="lozinka" ColumnName="lozinka" />
+                <ScalarProperty Name="tipKorisnika" ColumnName="tipKorisnika" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Narudzbenica">
+            <EntityTypeMapping TypeName="T23_Enigma2Model.Narudzbenica">
+              <MappingFragment StoreEntitySet="Narudzbenica">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+                <ScalarProperty Name="datum" ColumnName="datum" />
+                <ScalarProperty Name="poslovniPart" ColumnName="poslovniPart" />
+                <ScalarProperty Name="knjizDok" ColumnName="knjizDok" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Otpremnica">
+            <EntityTypeMapping TypeName="T23_Enigma2Model.Otpremnica">
+              <MappingFragment StoreEntitySet="Otpremnica">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="odrediste" ColumnName="odrediste" />
+                <ScalarProperty Name="datumOtpreme" ColumnName="datumOtpreme" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+                <ScalarProperty Name="knjizenjeDok" ColumnName="knjizenjeDok" />
+                <ScalarProperty Name="poslPartner" ColumnName="poslPartner" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="poslovniPartner">
+            <EntityTypeMapping TypeName="T23_Enigma2Model.poslovniPartner">
+              <MappingFragment StoreEntitySet="poslovniPartner">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="adresa" ColumnName="adresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pracenjeProizvodnje">
+            <EntityTypeMapping TypeName="T23_Enigma2Model.pracenjeProizvodnje">
+              <MappingFragment StoreEntitySet="pracenjeProizvodnje">
+                <ScalarProperty Name="idDjelatnika" ColumnName="idDjelatnika" />
+                <ScalarProperty Name="idStroja" ColumnName="idStroja" />
+                <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Primka">
+            <EntityTypeMapping TypeName="T23_Enigma2Model.Primka">
+              <MappingFragment StoreEntitySet="Primka">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="datumZaprimanja" ColumnName="datumZaprimanja" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+                <ScalarProperty Name="knjizenjeDok" ColumnName="knjizenjeDok" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Repromaterijali">
+            <EntityTypeMapping TypeName="T23_Enigma2Model.Repromaterijali">
+              <MappingFragment StoreEntitySet="Repromaterijali">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+                <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+                <ScalarProperty Name="boja" ColumnName="boja" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stavkeIzdatnice">
+            <EntityTypeMapping TypeName="T23_Enigma2Model.stavkeIzdatnice">
+              <MappingFragment StoreEntitySet="stavkeIzdatnice">
+                <ScalarProperty Name="idArtikla" ColumnName="idArtikla" />
+                <ScalarProperty Name="idIzdatnice" ColumnName="idIzdatnice" />
+                <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stavkeNarudzbenice">
+            <EntityTypeMapping TypeName="T23_Enigma2Model.stavkeNarudzbenice">
+              <MappingFragment StoreEntitySet="stavkeNarudzbenice">
+                <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+                <ScalarProperty Name="idNarudzbenice" ColumnName="idNarudzbenice" />
+                <ScalarProperty Name="idRepromaterijala" ColumnName="idRepromaterijala" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stavkeOtpremnice">
+            <EntityTypeMapping TypeName="T23_Enigma2Model.stavkeOtpremnice">
+              <MappingFragment StoreEntitySet="stavkeOtpremnice">
+                <ScalarProperty Name="idArtikla" ColumnName="idArtikla" />
+                <ScalarProperty Name="idOtpremnice" ColumnName="idOtpremnice" />
+                <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stavkePrimke">
+            <EntityTypeMapping TypeName="T23_Enigma2Model.stavkePrimke">
+              <MappingFragment StoreEntitySet="stavkePrimke">
+                <ScalarProperty Name="idArtikla" ColumnName="idArtikla" />
+                <ScalarProperty Name="idPrimke" ColumnName="idPrimke" />
+                <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stroj">
+            <EntityTypeMapping TypeName="T23_Enigma2Model.Stroj">
+              <MappingFragment StoreEntitySet="Stroj">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="naziv" ColumnName="naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipKorisnika">
+            <EntityTypeMapping TypeName="T23_Enigma2Model.tipKorisnika">
+              <MappingFragment StoreEntitySet="tipKorisnika">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="uloga" ColumnName="uloga" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Utrosak">
+            <EntityTypeMapping TypeName="T23_Enigma2Model.Utrosak">
+              <MappingFragment StoreEntitySet="Utrosak">
+                <ScalarProperty Name="idRepromaterijala" ColumnName="idRepromaterijala" />
+                <ScalarProperty Name="idArtikla" ColumnName="idArtikla" />
+                <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,31 @@
+c:\users\buba\documents\visual studio 2012\Projects\COMPROMPlusdoo\COMPROMPlusdoo\bin\Debug\COMPROMPlusdoo.exe.config
+c:\users\buba\documents\visual studio 2012\Projects\COMPROMPlusdoo\COMPROMPlusdoo\bin\Debug\T23_Enigma2.mdf
+c:\users\buba\documents\visual studio 2012\Projects\COMPROMPlusdoo\COMPROMPlusdoo\bin\Debug\T23_Enigma2_log.ldf
+c:\users\buba\documents\visual studio 2012\Projects\COMPROMPlusdoo\COMPROMPlusdoo\bin\Debug\COMPROMPlusdoo.exe
+c:\users\buba\documents\visual studio 2012\Projects\COMPROMPlusdoo\COMPROMPlusdoo\bin\Debug\COMPROMPlusdoo.pdb
+c:\users\buba\documents\visual studio 2012\Projects\COMPROMPlusdoo\COMPROMPlusdoo\obj\Debug\COMPROMPlusdoo.csprojResolveAssemblyReference.cache
+c:\users\buba\documents\visual studio 2012\Projects\COMPROMPlusdoo\COMPROMPlusdoo\obj\Debug\COMPROMPlusdoo.Form1.resources
+c:\users\buba\documents\visual studio 2012\Projects\COMPROMPlusdoo\COMPROMPlusdoo\obj\Debug\COMPROMPlusdoo.formaPrijava.resources
+c:\users\buba\documents\visual studio 2012\Projects\COMPROMPlusdoo\COMPROMPlusdoo\obj\Debug\COMPROMPlusdoo.Properties.Resources.resources
+c:\users\buba\documents\visual studio 2012\Projects\COMPROMPlusdoo\COMPROMPlusdoo\obj\Debug\COMPROMPlusdoo.csproj.GenerateResource.Cache
+c:\users\buba\documents\visual studio 2012\Projects\COMPROMPlusdoo\COMPROMPlusdoo\obj\Debug\COMPROMPlusdoo.exe
+c:\users\buba\documents\visual studio 2012\Projects\COMPROMPlusdoo\COMPROMPlusdoo\obj\Debug\COMPROMPlusdoo.pdb
+c:\users\buba\documents\visual studio 2012\Projects\COMPROMPlusdoo\COMPROMPlusdoo\bin\Debug\EntityFramework.dll
+c:\users\buba\documents\visual studio 2012\Projects\COMPROMPlusdoo\COMPROMPlusdoo\bin\Debug\EntityFramework.xml
+C:\Users\Buba\Desktop\COMPROMPlusdoo\COMPROMPlusdoo\bin\Debug\COMPROMPlusdoo.exe.config
+C:\Users\Buba\Desktop\COMPROMPlusdoo\COMPROMPlusdoo\obj\Debug\COMPROMPlusdoo.exe
+C:\Users\Buba\Desktop\COMPROMPlusdoo\COMPROMPlusdoo\obj\Debug\COMPROMPlusdoo.pdb
+C:\Users\Buba\Desktop\COMPROMPlusdoo\COMPROMPlusdoo\bin\Debug\T23_Enigma2.mdf
+C:\Users\Buba\Desktop\COMPROMPlusdoo\COMPROMPlusdoo\bin\Debug\T23_Enigma2_log.ldf
+C:\Users\Buba\Desktop\COMPROMPlusdoo\COMPROMPlusdoo\bin\Debug\COMPROMPlusdoo.exe
+C:\Users\Buba\Desktop\COMPROMPlusdoo\COMPROMPlusdoo\bin\Debug\COMPROMPlusdoo.pdb
+C:\Users\Buba\Desktop\COMPROMPlusdoo\COMPROMPlusdoo\bin\Debug\EntityFramework.dll
+C:\Users\Buba\Desktop\COMPROMPlusdoo\COMPROMPlusdoo\bin\Debug\EntityFramework.xml
+C:\Users\Buba\Desktop\COMPROMPlusdoo\COMPROMPlusdoo\obj\Debug\COMPROMPlusdoo.csprojResolveAssemblyReference.cache
+C:\Users\Buba\Desktop\COMPROMPlusdoo\COMPROMPlusdoo\obj\Debug\COMPROMPlusdoo.Form1.resources
+C:\Users\Buba\Desktop\COMPROMPlusdoo\COMPROMPlusdoo\obj\Debug\COMPROMPlusdoo.formaGlavniIzbornik.resources
+C:\Users\Buba\Desktop\COMPROMPlusdoo\COMPROMPlusdoo\obj\Debug\COMPROMPlusdoo.formaPrijava.resources
+C:\Users\Buba\Desktop\COMPROMPlusdoo\COMPROMPlusdoo\obj\Debug\COMPROMPlusdoo.Properties.Resources.resources
+C:\Users\Buba\Desktop\COMPROMPlusdoo\COMPROMPlusdoo\obj\Debug\COMPROMPlusdoo.csproj.GenerateResource.Cache
+C:\Users\Buba\Desktop\COMPROMPlusdoo\COMPROMPlusdoo\obj\Debug\COMPROMPlusdoo.formaArtikliPregled.resources
+C:\Users\Buba\Desktop\COMPROMPlusdoo\COMPROMPlusdoo\obj\Debug\COMPROMPlusdoo.formaArtikliUnos.resources

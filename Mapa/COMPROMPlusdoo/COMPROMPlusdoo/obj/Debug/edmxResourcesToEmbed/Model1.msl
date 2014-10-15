@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="T23_Enigma2ModelStoreContainer" CdmEntityContainer="T23_Enigma2Entities">
+    <EntitySetMapping Name="Artikli">
+      <EntityTypeMapping TypeName="T23_Enigma2Model.Artikli">
+        <MappingFragment StoreEntitySet="Artikli">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="opis" ColumnName="opis" />
+          <ScalarProperty Name="boja" ColumnName="boja" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+          <ScalarProperty Name="klasa" ColumnName="klasa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Djelatnik">
+      <EntityTypeMapping TypeName="T23_Enigma2Model.Djelatnik">
+        <MappingFragment StoreEntitySet="Djelatnik">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ime" ColumnName="ime" />
+          <ScalarProperty Name="prezime" ColumnName="prezime" />
+          <ScalarProperty Name="strucnaSprema" ColumnName="strucnaSprema" />
+          <ScalarProperty Name="stroj" ColumnName="stroj" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Izdatnica">
+      <EntityTypeMapping TypeName="T23_Enigma2Model.Izdatnica">
+        <MappingFragment StoreEntitySet="Izdatnica">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="boja" ColumnName="boja" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="knjizenjeDok" ColumnName="knjizenjeDok" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="knjizenjeDokumenta">
+      <EntityTypeMapping TypeName="T23_Enigma2Model.knjizenjeDokumenta">
+        <MappingFragment StoreEntitySet="knjizenjeDokumenta">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Korisnik">
+      <EntityTypeMapping TypeName="T23_Enigma2Model.Korisnik">
+        <MappingFragment StoreEntitySet="Korisnik">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="korisnickoIme" ColumnName="korisnickoIme" />
+          <ScalarProperty Name="lozinka" ColumnName="lozinka" />
+          <ScalarProperty Name="tipKorisnika" ColumnName="tipKorisnika" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Narudzbenica">
+      <EntityTypeMapping TypeName="T23_Enigma2Model.Narudzbenica">
+        <MappingFragment StoreEntitySet="Narudzbenica">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="opis" ColumnName="opis" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="poslovniPart" ColumnName="poslovniPart" />
+          <ScalarProperty Name="knjizDok" ColumnName="knjizDok" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Otpremnica">
+      <EntityTypeMapping TypeName="T23_Enigma2Model.Otpremnica">
+        <MappingFragment StoreEntitySet="Otpremnica">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="odrediste" ColumnName="odrediste" />
+          <ScalarProperty Name="datumOtpreme" ColumnName="datumOtpreme" />
+          <ScalarProperty Name="opis" ColumnName="opis" />
+          <ScalarProperty Name="knjizenjeDok" ColumnName="knjizenjeDok" />
+          <ScalarProperty Name="poslPartner" ColumnName="poslPartner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="poslovniPartner">
+      <EntityTypeMapping TypeName="T23_Enigma2Model.poslovniPartner">
+        <MappingFragment StoreEntitySet="poslovniPartner">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="adresa" ColumnName="adresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pracenjeProizvodnje">
+      <EntityTypeMapping TypeName="T23_Enigma2Model.pracenjeProizvodnje">
+        <MappingFragment StoreEntitySet="pracenjeProizvodnje">
+          <ScalarProperty Name="idDjelatnika" ColumnName="idDjelatnika" />
+          <ScalarProperty Name="idStroja" ColumnName="idStroja" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Primka">
+      <EntityTypeMapping TypeName="T23_Enigma2Model.Primka">
+        <MappingFragment StoreEntitySet="Primka">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="datumZaprimanja" ColumnName="datumZaprimanja" />
+          <ScalarProperty Name="opis" ColumnName="opis" />
+          <ScalarProperty Name="knjizenjeDok" ColumnName="knjizenjeDok" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Repromaterijali">
+      <EntityTypeMapping TypeName="T23_Enigma2Model.Repromaterijali">
+        <MappingFragment StoreEntitySet="Repromaterijali">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="opis" ColumnName="opis" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+          <ScalarProperty Name="boja" ColumnName="boja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stavkeIzdatnice">
+      <EntityTypeMapping TypeName="T23_Enigma2Model.stavkeIzdatnice">
+        <MappingFragment StoreEntitySet="stavkeIzdatnice">
+          <ScalarProperty Name="idArtikla" ColumnName="idArtikla" />
+          <ScalarProperty Name="idIzdatnice" ColumnName="idIzdatnice" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stavkeNarudzbenice">
+      <EntityTypeMapping TypeName="T23_Enigma2Model.stavkeNarudzbenice">
+        <MappingFragment StoreEntitySet="stavkeNarudzbenice">
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+          <ScalarProperty Name="idNarudzbenice" ColumnName="idNarudzbenice" />
+          <ScalarProperty Name="idRepromaterijala" ColumnName="idRepromaterijala" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stavkeOtpremnice">
+      <EntityTypeMapping TypeName="T23_Enigma2Model.stavkeOtpremnice">
+        <MappingFragment StoreEntitySet="stavkeOtpremnice">
+          <ScalarProperty Name="idArtikla" ColumnName="idArtikla" />
+          <ScalarProperty Name="idOtpremnice" ColumnName="idOtpremnice" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stavkePrimke">
+      <EntityTypeMapping TypeName="T23_Enigma2Model.stavkePrimke">
+        <MappingFragment StoreEntitySet="stavkePrimke">
+          <ScalarProperty Name="idArtikla" ColumnName="idArtikla" />
+          <ScalarProperty Name="idPrimke" ColumnName="idPrimke" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stroj">
+      <EntityTypeMapping TypeName="T23_Enigma2Model.Stroj">
+        <MappingFragment StoreEntitySet="Stroj">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipKorisnika">
+      <EntityTypeMapping TypeName="T23_Enigma2Model.tipKorisnika">
+        <MappingFragment StoreEntitySet="tipKorisnika">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="uloga" ColumnName="uloga" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Utrosak">
+      <EntityTypeMapping TypeName="T23_Enigma2Model.Utrosak">
+        <MappingFragment StoreEntitySet="Utrosak">
+          <ScalarProperty Name="idRepromaterijala" ColumnName="idRepromaterijala" />
+          <ScalarProperty Name="idArtikla" ColumnName="idArtikla" />
+          <ScalarProperty Name="kolicina" ColumnName="kolicina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
