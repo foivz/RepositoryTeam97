@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="T23_EnigmaModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="T23_EnigmaEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Artikl" EntityType="T23_EnigmaModel.Artikl" />
+    <EntitySet Name="Djelatnik" EntityType="T23_EnigmaModel.Djelatnik" />
+    <EntitySet Name="Dokument" EntityType="T23_EnigmaModel.Dokument" />
+    <EntitySet Name="KnjizenjeDokumenta" EntityType="T23_EnigmaModel.KnjizenjeDokumenta" />
+    <EntitySet Name="Korisnik" EntityType="T23_EnigmaModel.Korisnik" />
+    <EntitySet Name="StavkeDokumenta" EntityType="T23_EnigmaModel.StavkeDokumenta" />
+    <EntitySet Name="Stroj" EntityType="T23_EnigmaModel.Stroj" />
+    <EntitySet Name="TipDokumenta" EntityType="T23_EnigmaModel.TipDokumenta" />
+    <EntitySet Name="TipKorisnika" EntityType="T23_EnigmaModel.TipKorisnika" />
+    <AssociationSet Name="FK_StavkeDokumenta_Artikl" Association="T23_EnigmaModel.FK_StavkeDokumenta_Artikl">
+      <End Role="Artikl" EntitySet="Artikl" />
+      <End Role="StavkeDokumenta" EntitySet="StavkeDokumenta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Djelatnik_Stroj" Association="T23_EnigmaModel.FK_Djelatnik_Stroj">
+      <End Role="Stroj" EntitySet="Stroj" />
+      <End Role="Djelatnik" EntitySet="Djelatnik" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dokument_KnjizenjeDokumenta" Association="T23_EnigmaModel.FK_Dokument_KnjizenjeDokumenta">
+      <End Role="KnjizenjeDokumenta" EntitySet="KnjizenjeDokumenta" />
+      <End Role="Dokument" EntitySet="Dokument" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dokument_TipDokumenta" Association="T23_EnigmaModel.FK_Dokument_TipDokumenta">
+      <End Role="TipDokumenta" EntitySet="TipDokumenta" />
+      <End Role="Dokument" EntitySet="Dokument" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StavkeDokumenta_Dokument" Association="T23_EnigmaModel.FK_StavkeDokumenta_Dokument">
+      <End Role="Dokument" EntitySet="Dokument" />
+      <End Role="StavkeDokumenta" EntitySet="StavkeDokumenta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Korisnik_TipKorisnika" Association="T23_EnigmaModel.FK_Korisnik_TipKorisnika">
+      <End Role="TipKorisnika" EntitySet="TipKorisnika" />
+      <End Role="Korisnik" EntitySet="Korisnik" />
+    </AssociationSet>
+    <EntitySet Name="Repromaterijal" EntityType="T23_EnigmaModel.Repromaterijal" />
+    <EntitySet Name="Utrosak" EntityType="T23_EnigmaModel.Utrosak" />
+    <AssociationSet Name="FK_Utrosak_Artikl" Association="T23_EnigmaModel.FK_Utrosak_Artikl">
+      <End Role="Artikl" EntitySet="Artikl" />
+      <End Role="Utrosak" EntitySet="Utrosak" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Utrosak_Repromaterijal" Association="T23_EnigmaModel.FK_Utrosak_Repromaterijal">
+      <End Role="Repromaterijal" EntitySet="Repromaterijal" />
+      <End Role="Utrosak" EntitySet="Utrosak" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Artikl">
+    <Key>
+      <PropertyRef Name="IdArtikl" />
+    </Key>
+    <Property Name="IdArtikl" Type="Int32" Nullable="false" />
+    <Property Name="naziv" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="opis" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="boja" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="kolicina" Type="Int32" />
+    <Property Name="klasa" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="StavkeDokumenta" Relationship="T23_EnigmaModel.FK_StavkeDokumenta_Artikl" FromRole="Artikl" ToRole="StavkeDokumenta" />
+    <NavigationProperty Name="Utrosak" Relationship="T23_EnigmaModel.FK_Utrosak_Artikl" FromRole="Artikl" ToRole="Utrosak" />
+  </EntityType>
+  <EntityType Name="Djelatnik">
+    <Key>
+      <PropertyRef Name="IdDjelatnik" />
+    </Key>
+    <Property Name="IdDjelatnik" Type="Int32" Nullable="false" />
+    <Property Name="ime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="prezime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="adresa" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="strucnaSprema" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="stroj" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Stroj1" Relationship="T23_EnigmaModel.FK_Djelatnik_Stroj" FromRole="Djelatnik" ToRole="Stroj" />
+  </EntityType>
+  <EntityType Name="Dokument">
+    <Key>
+      <PropertyRef Name="IdDokument" />
+    </Key>
+    <Property Name="IdDokument" Type="Int32" Nullable="false" />
+    <Property Name="datum" Type="DateTime" Precision="0" />
+    <Property Name="opis" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="tipDokumenta" Type="Int32" />
+    <Property Name="knjizenjeDokumenta" Type="Int32" />
+    <NavigationProperty Name="KnjizenjeDokumenta1" Relationship="T23_EnigmaModel.FK_Dokument_KnjizenjeDokumenta" FromRole="Dokument" ToRole="KnjizenjeDokumenta" />
+    <NavigationProperty Name="TipDokumenta1" Relationship="T23_EnigmaModel.FK_Dokument_TipDokumenta" FromRole="Dokument" ToRole="TipDokumenta" />
+    <NavigationProperty Name="StavkeDokumenta" Relationship="T23_EnigmaModel.FK_StavkeDokumenta_Dokument" FromRole="Dokument" ToRole="StavkeDokumenta" />
+  </EntityType>
+  <EntityType Name="KnjizenjeDokumenta">
+    <Key>
+      <PropertyRef Name="IdKnjizenjeDokumenta" />
+    </Key>
+    <Property Name="IdKnjizenjeDokumenta" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Dokument" Relationship="T23_EnigmaModel.FK_Dokument_KnjizenjeDokumenta" FromRole="KnjizenjeDokumenta" ToRole="Dokument" />
+  </EntityType>
+  <EntityType Name="Korisnik">
+    <Key>
+      <PropertyRef Name="IdKorisnik" />
+    </Key>
+    <Property Name="IdKorisnik" Type="Int32" Nullable="false" />
+    <Property Name="korisnickoIme" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="lozinka" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="tipKorisnika" Type="Int32" />
+    <NavigationProperty Name="TipKorisnika1" Relationship="T23_EnigmaModel.FK_Korisnik_TipKorisnika" FromRole="Korisnik" ToRole="TipKorisnika" />
+  </EntityType>
+  <EntityType Name="StavkeDokumenta">
+    <Key>
+      <PropertyRef Name="artikl" />
+      <PropertyRef Name="dokument" />
+    </Key>
+    <Property Name="artikl" Type="Int32" Nullable="false" />
+    <Property Name="dokument" Type="Int32" Nullable="false" />
+    <Property Name="kolicina" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Artikl1" Relationship="T23_EnigmaModel.FK_StavkeDokumenta_Artikl" FromRole="StavkeDokumenta" ToRole="Artikl" />
+    <NavigationProperty Name="Dokument1" Relationship="T23_EnigmaModel.FK_StavkeDokumenta_Dokument" FromRole="StavkeDokumenta" ToRole="Dokument" />
+  </EntityType>
+  <EntityType Name="Stroj">
+    <Key>
+      <PropertyRef Name="IdStroj" />
+    </Key>
+    <Property Name="IdStroj" Type="Int32" Nullable="false" />
+    <Property Name="naziv" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Djelatnik" Relationship="T23_EnigmaModel.FK_Djelatnik_Stroj" FromRole="Stroj" ToRole="Djelatnik" />
+  </EntityType>
+  <EntityType Name="TipDokumenta">
+    <Key>
+      <PropertyRef Name="IdTipDokumenta" />
+    </Key>
+    <Property Name="IdTipDokumenta" Type="Int32" Nullable="false" />
+    <Property Name="naziv" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Dokument" Relationship="T23_EnigmaModel.FK_Dokument_TipDokumenta" FromRole="TipDokumenta" ToRole="Dokument" />
+  </EntityType>
+  <EntityType Name="TipKorisnika">
+    <Key>
+      <PropertyRef Name="IdTipKorisnika" />
+    </Key>
+    <Property Name="IdTipKorisnika" Type="Int32" Nullable="false" />
+    <Property Name="uloga" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Korisnik" Relationship="T23_EnigmaModel.FK_Korisnik_TipKorisnika" FromRole="TipKorisnika" ToRole="Korisnik" />
+  </EntityType>
+  <Association Name="FK_StavkeDokumenta_Artikl">
+    <End Role="Artikl" Type="T23_EnigmaModel.Artikl" Multiplicity="1" />
+    <End Role="StavkeDokumenta" Type="T23_EnigmaModel.StavkeDokumenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artikl">
+        <PropertyRef Name="IdArtikl" />
+      </Principal>
+      <Dependent Role="StavkeDokumenta">
+        <PropertyRef Name="artikl" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Djelatnik_Stroj">
+    <End Role="Stroj" Type="T23_EnigmaModel.Stroj" Multiplicity="1" />
+    <End Role="Djelatnik" Type="T23_EnigmaModel.Djelatnik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stroj">
+        <PropertyRef Name="IdStroj" />
+      </Principal>
+      <Dependent Role="Djelatnik">
+        <PropertyRef Name="stroj" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dokument_KnjizenjeDokumenta">
+    <End Role="KnjizenjeDokumenta" Type="T23_EnigmaModel.KnjizenjeDokumenta" Multiplicity="0..1" />
+    <End Role="Dokument" Type="T23_EnigmaModel.Dokument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KnjizenjeDokumenta">
+        <PropertyRef Name="IdKnjizenjeDokumenta" />
+      </Principal>
+      <Dependent Role="Dokument">
+        <PropertyRef Name="knjizenjeDokumenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dokument_TipDokumenta">
+    <End Role="TipDokumenta" Type="T23_EnigmaModel.TipDokumenta" Multiplicity="0..1" />
+    <End Role="Dokument" Type="T23_EnigmaModel.Dokument" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipDokumenta">
+        <PropertyRef Name="IdTipDokumenta" />
+      </Principal>
+      <Dependent Role="Dokument">
+        <PropertyRef Name="tipDokumenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StavkeDokumenta_Dokument">
+    <End Role="Dokument" Type="T23_EnigmaModel.Dokument" Multiplicity="1" />
+    <End Role="StavkeDokumenta" Type="T23_EnigmaModel.StavkeDokumenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dokument">
+        <PropertyRef Name="IdDokument" />
+      </Principal>
+      <Dependent Role="StavkeDokumenta">
+        <PropertyRef Name="dokument" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Korisnik_TipKorisnika">
+    <End Role="TipKorisnika" Type="T23_EnigmaModel.TipKorisnika" Multiplicity="0..1" />
+    <End Role="Korisnik" Type="T23_EnigmaModel.Korisnik" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipKorisnika">
+        <PropertyRef Name="IdTipKorisnika" />
+      </Principal>
+      <Dependent Role="Korisnik">
+        <PropertyRef Name="tipKorisnika" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Repromaterijal">
+    <Key>
+      <PropertyRef Name="IdRepromaterijal" />
+    </Key>
+    <Property Type="Int32" Name="IdRepromaterijal" Nullable="false" />
+    <Property Type="String" Name="naziv" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="opis" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="kolicina" />
+    <Property Type="Int32" Name="velicina" />
+    <Property Type="Int32" Name="barkod" />
+    <Property Type="String" Name="boja" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Utrosak" Relationship="T23_EnigmaModel.FK_Utrosak_Repromaterijal" FromRole="Repromaterijal" ToRole="Utrosak" />
+  </EntityType>
+  <EntityType Name="Utrosak">
+    <Key>
+      <PropertyRef Name="IdUtrosak" />
+    </Key>
+    <Property Type="Int32" Name="IdUtrosak" Nullable="false" />
+    <Property Type="Int32" Name="kolicina" />
+    <Property Type="Int32" Name="velicina" />
+    <Property Type="Int32" Name="IdArtikl" />
+    <Property Type="Int32" Name="IdRepromaterijal" />
+    <NavigationProperty Name="Artikl" Relationship="T23_EnigmaModel.FK_Utrosak_Artikl" FromRole="Utrosak" ToRole="Artikl" />
+    <NavigationProperty Name="Repromaterijal" Relationship="T23_EnigmaModel.FK_Utrosak_Repromaterijal" FromRole="Utrosak" ToRole="Repromaterijal" />
+  </EntityType>
+  <Association Name="FK_Utrosak_Artikl">
+    <End Type="T23_EnigmaModel.Artikl" Role="Artikl" Multiplicity="0..1" />
+    <End Type="T23_EnigmaModel.Utrosak" Role="Utrosak" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artikl">
+        <PropertyRef Name="IdArtikl" />
+      </Principal>
+      <Dependent Role="Utrosak">
+        <PropertyRef Name="IdArtikl" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Utrosak_Repromaterijal">
+    <End Type="T23_EnigmaModel.Repromaterijal" Role="Repromaterijal" Multiplicity="0..1" />
+    <End Type="T23_EnigmaModel.Utrosak" Role="Utrosak" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Repromaterijal">
+        <PropertyRef Name="IdRepromaterijal" />
+      </Principal>
+      <Dependent Role="Utrosak">
+        <PropertyRef Name="IdRepromaterijal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
