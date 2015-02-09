@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e24671a8bc3b46cf86e7570b2db8dd1e" Name="Diagram1" ZoomLevel="40">
+        <EntityTypeShape EntityType="T23_EnigmaModel.Artikl" Width="1.5" PointX="2.875" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="T23_EnigmaModel.Djelatnik" Width="1.5" PointX="12" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="T23_EnigmaModel.Dokument" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="T23_EnigmaModel.KnjizenjeDokumenta" Width="1.5" PointX="0.5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="T23_EnigmaModel.Korisnik" Width="1.5" PointX="16" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="T23_EnigmaModel.StavkeDokumenta" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="T23_EnigmaModel.Stroj" Width="1.5" PointX="7.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="T23_EnigmaModel.TipDokumenta" Width="1.5" PointX="0.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="T23_EnigmaModel.TipKorisnika" Width="1.5" PointX="13.5" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="T23_EnigmaModel.FK_StavkeDokumenta_Artikl" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="T23_EnigmaModel.FK_Dokument_KnjizenjeDokumenta" ManuallyRouted="false" />
+        <AssociationConnector Association="T23_EnigmaModel.FK_Dokument_TipDokumenta" ManuallyRouted="false" />
+        <AssociationConnector Association="T23_EnigmaModel.FK_StavkeDokumenta_Dokument" ManuallyRouted="false" />
+        <AssociationConnector Association="T23_EnigmaModel.FK_Korisnik_TipKorisnika" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="T23_EnigmaModel.PracenjeProizvodnje" Width="1.5" PointX="10" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="T23_EnigmaModel.FK_PracenjeProizvodnnje_Artikl" />
+        <AssociationConnector Association="T23_EnigmaModel.FK_PracenjeProizvodnnje_Djelatnik" />
+        <AssociationConnector Association="T23_EnigmaModel.FK_PracenjeProizvodnnje_Stroj" />
+        <EntityTypeShape EntityType="T23_EnigmaModel.Izdatnica" Width="1.5" PointX="1.25" PointY="7.875" />
+        <EntityTypeShape EntityType="T23_EnigmaModel.Narudzbenica" Width="1.5" PointX="3.75" PointY="13.25" />
+        <EntityTypeShape EntityType="T23_EnigmaModel.Otpremnica" Width="1.5" PointX="5.5" PointY="10.5" />
+        <EntityTypeShape EntityType="T23_EnigmaModel.poslovniPartner" Width="1.5" PointX="8.75" PointY="10.125" />
+        <EntityTypeShape EntityType="T23_EnigmaModel.Primka" Width="1.5" PointX="0.5" PointY="15.875" />
+        <EntityTypeShape EntityType="T23_EnigmaModel.stavkeIzdatnice" Width="1.5" PointX="3.625" PointY="8.125" />
+        <EntityTypeShape EntityType="T23_EnigmaModel.stavkeNarudzbenice" Width="1.5" PointX="8" PointY="14.75" />
+        <EntityTypeShape EntityType="T23_EnigmaModel.stavkeOtpremnice" Width="1.5" PointX="8.75" PointY="7.875" />
+        <EntityTypeShape EntityType="T23_EnigmaModel.stavkePrimke" Width="1.5" PointX="11.5" PointY="16.375" />
+        <AssociationConnector Association="T23_EnigmaModel.FK_stavkeIzdatnice_Artikl" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="T23_EnigmaModel.FK_stavkeOtpremnice_Artikl" />
+        <AssociationConnector Association="T23_EnigmaModel.FK_stavkePrimke_Artikli" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="T23_EnigmaModel.FK_Izdatnica_knjizenjeDokumenta" />
+        <AssociationConnector Association="T23_EnigmaModel.FK_stavkeIzdatnice_Izdatnica" />
+        <AssociationConnector Association="T23_EnigmaModel.FK_Narudzbenica_KnjizenjeDokumenta" />
+        <AssociationConnector Association="T23_EnigmaModel.FK_Otpremnica_KnjizenjeDokumenta" />
+        <AssociationConnector Association="T23_EnigmaModel.FK_Primka_KnjizenjeDokumenta" ManuallyRouted="true" >
+          <ConnectorPoint PointX="0.88475805832849463" PointY="12.989889322916666" />
+          <ConnectorPoint PointX="0.88475805832849463" PointY="15.625" />
+          <ConnectorPoint PointX="2.25" PointY="15.625" />
+          <ConnectorPoint PointX="2.25" PointY="16.192610701789523" />
+          <ConnectorPoint PointX="2" PointY="16.192610701789523" />
+        </AssociationConnector>
+        <AssociationConnector Association="T23_EnigmaModel.FK_Narudzbenica_poslovniPartner" />
+        <AssociationConnector Association="T23_EnigmaModel.FK_stavkeNarudzbenice_Narudzbenica" />
+        <AssociationConnector Association="T23_EnigmaModel.FK_Otpremnica_ToTable" />
+        <AssociationConnector Association="T23_EnigmaModel.FK_stavkeOtpremnice_Otpremnica" />
+        <AssociationConnector Association="T23_EnigmaModel.FK_stavkePrimke_Primka" ManuallyRouted="false" >
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
